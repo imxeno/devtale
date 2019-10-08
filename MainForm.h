@@ -75,14 +75,21 @@ namespace devtale
 		System::Windows::Forms::TabPage^ tabPage4;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox4;
+	private: System::Windows::Forms::TextBox^ sendPacketIntervalTextBox;
+
 	private:
-		System::Windows::Forms::TextBox^ textBox7;
+
+	private: System::Windows::Forms::TextBox^ sendPacketCountTextBox;
 	private:
-		System::Windows::Forms::TextBox^ textBox6;
+
+	private: System::Windows::Forms::RadioButton^ sendPacketInfiniteRadio;
 	private:
-		System::Windows::Forms::RadioButton^ radioButton2;
+
+	private: System::Windows::Forms::RadioButton^ sendPacketCountRadio;
+
+
 	private:
-		System::Windows::Forms::RadioButton^ radioButton1;
+
 	private:
 		System::Windows::Forms::Button^ multiplePacketSendButton;
 	private:
@@ -91,20 +98,27 @@ namespace devtale
 		System::Windows::Forms::GroupBox^ groupBox3;
 	private:
 		System::Windows::Forms::Button^ singlePacketSendButton;
+	private: System::Windows::Forms::TextBox^ singlePacketSendTextBox;
 	private:
-		System::Windows::Forms::TextBox^ singlePacketSendText;
+
 	private:
 		System::Windows::Forms::GroupBox^ groupBox5;
+	private: System::Windows::Forms::TextBox^ receivePacketIntervalTextBox;
 	private:
-		System::Windows::Forms::TextBox^ textBox4;
+
+	private: System::Windows::Forms::TextBox^ receivePacketCountTextBox;
 	private:
-		System::Windows::Forms::TextBox^ textBox8;
+
+	private: System::Windows::Forms::RadioButton^ receivePacketIntervalRadio;
 	private:
-		System::Windows::Forms::RadioButton^ radioButton3;
+
+	private: System::Windows::Forms::RadioButton^ receivePacketCountRadio;
+
 	private:
-		System::Windows::Forms::RadioButton^ radioButton4;
+
+	private: System::Windows::Forms::TextBox^ multiplePacketReceiveTextBox;
 	private:
-		System::Windows::Forms::TextBox^ multiplePacketReceiveText;
+
 	private:
 		System::Windows::Forms::Button^ multiplePacketReceiveButton;
 
@@ -113,9 +127,10 @@ namespace devtale
 		System::Windows::Forms::GroupBox^ groupBox6;
 	private:
 		System::Windows::Forms::Button^ singlePacketReceiveButton;
+private: System::Windows::Forms::TextBox^ singlePacketReceiveTextBox;
 
 	private:
-		System::Windows::Forms::TextBox^ singlePacketReceiveText;
+
 
 
 	private:
@@ -124,30 +139,37 @@ namespace devtale
 		System::Windows::Forms::GroupBox^ groupBox8;
 	private:
 		System::Windows::Forms::Button^ newReceivedPacketFilterButton;
+private: System::Windows::Forms::Button^ removeReceivedPacketFilterButton;
+private: System::Windows::Forms::TextBox^ newReceivedPacketFilterTextBox;
 	private:
-		System::Windows::Forms::Button^ removeSelectedReceiveFilter;
+
 	private:
-		System::Windows::Forms::TextBox^ newReceivedPacketFilterText;
+
+private: System::Windows::Forms::ListBox^ filterReceivedPacketList;
 	private:
-		System::Windows::Forms::ListBox^ filterReceivedList;
+
 	private:
 		System::Windows::Forms::GroupBox^ groupBox7;
 	private:
 		System::Windows::Forms::Button^ newSentPacketFilterButton;
+private: System::Windows::Forms::TextBox^ newSentPacketFilterTextBox;
 	private:
-		System::Windows::Forms::TextBox^ newSentPacketFilterText;
+
+private: System::Windows::Forms::Button^ removeSentPacketFilterButton;
 	private:
-		System::Windows::Forms::Button^ removeSentPacketFilter;
+
+private: System::Windows::Forms::ListBox^ filterSentPacketList;
 	private:
-		System::Windows::Forms::ListBox^ filterSentList;
+
 	private:
 		System::Windows::Forms::TabPage^ tabPage6;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox10;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox9;
+private: System::Windows::Forms::TextBox^ luaTextBox;
 	private:
-		System::Windows::Forms::TextBox^ textBox3;
+
 
 	private:
 		/// <summary>
@@ -168,37 +190,37 @@ namespace devtale
 			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->sendPacketIntervalTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->sendPacketCountTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->sendPacketInfiniteRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->sendPacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketSendButton = (gcnew System::Windows::Forms::Button());
 			this->multiplePacketSendText = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->singlePacketSendButton = (gcnew System::Windows::Forms::Button());
-			this->singlePacketSendText = (gcnew System::Windows::Forms::TextBox());
+			this->singlePacketSendTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
-			this->multiplePacketReceiveText = (gcnew System::Windows::Forms::TextBox());
+			this->receivePacketIntervalTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->receivePacketCountTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->receivePacketIntervalRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->receivePacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->multiplePacketReceiveTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->multiplePacketReceiveButton = (gcnew System::Windows::Forms::Button());
 			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			this->singlePacketReceiveButton = (gcnew System::Windows::Forms::Button());
-			this->singlePacketReceiveText = (gcnew System::Windows::Forms::TextBox());
+			this->singlePacketReceiveTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
 			this->newReceivedPacketFilterButton = (gcnew System::Windows::Forms::Button());
-			this->removeSelectedReceiveFilter = (gcnew System::Windows::Forms::Button());
-			this->newReceivedPacketFilterText = (gcnew System::Windows::Forms::TextBox());
-			this->filterReceivedList = (gcnew System::Windows::Forms::ListBox());
+			this->removeReceivedPacketFilterButton = (gcnew System::Windows::Forms::Button());
+			this->newReceivedPacketFilterTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->filterReceivedPacketList = (gcnew System::Windows::Forms::ListBox());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
 			this->newSentPacketFilterButton = (gcnew System::Windows::Forms::Button());
-			this->newSentPacketFilterText = (gcnew System::Windows::Forms::TextBox());
-			this->removeSentPacketFilter = (gcnew System::Windows::Forms::Button());
-			this->filterSentList = (gcnew System::Windows::Forms::ListBox());
+			this->newSentPacketFilterTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->removeSentPacketFilterButton = (gcnew System::Windows::Forms::Button());
+			this->filterSentPacketList = (gcnew System::Windows::Forms::ListBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->packetLogTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
@@ -209,7 +231,7 @@ namespace devtale
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->luaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
@@ -280,10 +302,10 @@ namespace devtale
 			// 
 			// groupBox4
 			// 
-			this->groupBox4->Controls->Add(this->textBox7);
-			this->groupBox4->Controls->Add(this->textBox6);
-			this->groupBox4->Controls->Add(this->radioButton2);
-			this->groupBox4->Controls->Add(this->radioButton1);
+			this->groupBox4->Controls->Add(this->sendPacketIntervalTextBox);
+			this->groupBox4->Controls->Add(this->sendPacketCountTextBox);
+			this->groupBox4->Controls->Add(this->sendPacketInfiniteRadio);
+			this->groupBox4->Controls->Add(this->sendPacketCountRadio);
 			this->groupBox4->Controls->Add(this->multiplePacketSendButton);
 			this->groupBox4->Controls->Add(this->multiplePacketSendText);
 			this->groupBox4->Location = System::Drawing::Point(9, 95);
@@ -294,43 +316,43 @@ namespace devtale
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Multiple packets";
 			// 
-			// textBox7
+			// sendPacketIntervalTextBox
 			// 
-			this->textBox7->Location = System::Drawing::Point(226, 187);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(58, 20);
-			this->textBox7->TabIndex = 5;
-			this->textBox7->Text = L"1";
+			this->sendPacketIntervalTextBox->Location = System::Drawing::Point(226, 187);
+			this->sendPacketIntervalTextBox->Name = L"sendPacketIntervalTextBox";
+			this->sendPacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
+			this->sendPacketIntervalTextBox->TabIndex = 5;
+			this->sendPacketIntervalTextBox->Text = L"1";
 			// 
-			// textBox6
+			// sendPacketCountTextBox
 			// 
-			this->textBox6->Location = System::Drawing::Point(59, 187);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(37, 20);
-			this->textBox6->TabIndex = 4;
-			this->textBox6->Text = L"1";
+			this->sendPacketCountTextBox->Location = System::Drawing::Point(59, 187);
+			this->sendPacketCountTextBox->Name = L"sendPacketCountTextBox";
+			this->sendPacketCountTextBox->Size = System::Drawing::Size(37, 20);
+			this->sendPacketCountTextBox->TabIndex = 4;
+			this->sendPacketCountTextBox->Text = L"1";
 			// 
-			// radioButton2
+			// sendPacketInfiniteRadio
 			// 
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->Location = System::Drawing::Point(146, 188);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(164, 17);
-			this->radioButton2->TabIndex = 3;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"Send every                        ms";
-			this->radioButton2->UseVisualStyleBackColor = true;
+			this->sendPacketInfiniteRadio->AutoSize = true;
+			this->sendPacketInfiniteRadio->Location = System::Drawing::Point(146, 188);
+			this->sendPacketInfiniteRadio->Name = L"sendPacketInfiniteRadio";
+			this->sendPacketInfiniteRadio->Size = System::Drawing::Size(164, 17);
+			this->sendPacketInfiniteRadio->TabIndex = 3;
+			this->sendPacketInfiniteRadio->TabStop = true;
+			this->sendPacketInfiniteRadio->Text = L"Send every                        ms";
+			this->sendPacketInfiniteRadio->UseVisualStyleBackColor = true;
 			// 
-			// radioButton1
+			// sendPacketCountRadio
 			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(9, 188);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(131, 17);
-			this->radioButton1->TabIndex = 2;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"Send                 time(s)";
-			this->radioButton1->UseVisualStyleBackColor = true;
+			this->sendPacketCountRadio->AutoSize = true;
+			this->sendPacketCountRadio->Location = System::Drawing::Point(9, 188);
+			this->sendPacketCountRadio->Name = L"sendPacketCountRadio";
+			this->sendPacketCountRadio->Size = System::Drawing::Size(131, 17);
+			this->sendPacketCountRadio->TabIndex = 2;
+			this->sendPacketCountRadio->TabStop = true;
+			this->sendPacketCountRadio->Text = L"Send                 time(s)";
+			this->sendPacketCountRadio->UseVisualStyleBackColor = true;
 			// 
 			// multiplePacketSendButton
 			// 
@@ -353,7 +375,7 @@ namespace devtale
 			// groupBox3
 			// 
 			this->groupBox3->Controls->Add(this->singlePacketSendButton);
-			this->groupBox3->Controls->Add(this->singlePacketSendText);
+			this->groupBox3->Controls->Add(this->singlePacketSendTextBox);
 			this->groupBox3->Location = System::Drawing::Point(9, 9);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Padding = System::Windows::Forms::Padding(6);
@@ -371,12 +393,12 @@ namespace devtale
 			this->singlePacketSendButton->Text = L"Send";
 			this->singlePacketSendButton->UseVisualStyleBackColor = true;
 			// 
-			// singlePacketSendText
+			// singlePacketSendTextBox
 			// 
-			this->singlePacketSendText->Location = System::Drawing::Point(9, 22);
-			this->singlePacketSendText->Name = L"singlePacketSendText";
-			this->singlePacketSendText->Size = System::Drawing::Size(374, 20);
-			this->singlePacketSendText->TabIndex = 0;
+			this->singlePacketSendTextBox->Location = System::Drawing::Point(9, 22);
+			this->singlePacketSendTextBox->Name = L"singlePacketSendTextBox";
+			this->singlePacketSendTextBox->Size = System::Drawing::Size(374, 20);
+			this->singlePacketSendTextBox->TabIndex = 0;
 			// 
 			// tabPage4
 			// 
@@ -392,11 +414,11 @@ namespace devtale
 			// 
 			// groupBox5
 			// 
-			this->groupBox5->Controls->Add(this->textBox4);
-			this->groupBox5->Controls->Add(this->textBox8);
-			this->groupBox5->Controls->Add(this->radioButton3);
-			this->groupBox5->Controls->Add(this->radioButton4);
-			this->groupBox5->Controls->Add(this->multiplePacketReceiveText);
+			this->groupBox5->Controls->Add(this->receivePacketIntervalTextBox);
+			this->groupBox5->Controls->Add(this->receivePacketCountTextBox);
+			this->groupBox5->Controls->Add(this->receivePacketIntervalRadio);
+			this->groupBox5->Controls->Add(this->receivePacketCountRadio);
+			this->groupBox5->Controls->Add(this->multiplePacketReceiveTextBox);
 			this->groupBox5->Controls->Add(this->multiplePacketReceiveButton);
 			this->groupBox5->Location = System::Drawing::Point(9, 95);
 			this->groupBox5->Name = L"groupBox5";
@@ -406,52 +428,52 @@ namespace devtale
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Multiple packets";
 			// 
-			// textBox4
+			// receivePacketIntervalTextBox
 			// 
-			this->textBox4->Location = System::Drawing::Point(255, 187);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(58, 20);
-			this->textBox4->TabIndex = 10;
-			this->textBox4->Text = L"1";
+			this->receivePacketIntervalTextBox->Location = System::Drawing::Point(255, 187);
+			this->receivePacketIntervalTextBox->Name = L"receivePacketIntervalTextBox";
+			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
+			this->receivePacketIntervalTextBox->TabIndex = 10;
+			this->receivePacketIntervalTextBox->Text = L"1";
 			// 
-			// textBox8
+			// receivePacketCountTextBox
 			// 
-			this->textBox8->Location = System::Drawing::Point(74, 187);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(37, 20);
-			this->textBox8->TabIndex = 9;
-			this->textBox8->Text = L"1";
+			this->receivePacketCountTextBox->Location = System::Drawing::Point(74, 187);
+			this->receivePacketCountTextBox->Name = L"receivePacketCountTextBox";
+			this->receivePacketCountTextBox->Size = System::Drawing::Size(37, 20);
+			this->receivePacketCountTextBox->TabIndex = 9;
+			this->receivePacketCountTextBox->Text = L"1";
 			// 
-			// radioButton3
+			// receivePacketIntervalRadio
 			// 
-			this->radioButton3->AutoSize = true;
-			this->radioButton3->Location = System::Drawing::Point(161, 188);
-			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(179, 17);
-			this->radioButton3->TabIndex = 8;
-			this->radioButton3->TabStop = true;
-			this->radioButton3->Text = L"Receive every                        ms";
-			this->radioButton3->UseVisualStyleBackColor = true;
+			this->receivePacketIntervalRadio->AutoSize = true;
+			this->receivePacketIntervalRadio->Location = System::Drawing::Point(161, 188);
+			this->receivePacketIntervalRadio->Name = L"receivePacketIntervalRadio";
+			this->receivePacketIntervalRadio->Size = System::Drawing::Size(179, 17);
+			this->receivePacketIntervalRadio->TabIndex = 8;
+			this->receivePacketIntervalRadio->TabStop = true;
+			this->receivePacketIntervalRadio->Text = L"Receive every                        ms";
+			this->receivePacketIntervalRadio->UseVisualStyleBackColor = true;
 			// 
-			// radioButton4
+			// receivePacketCountRadio
 			// 
-			this->radioButton4->AutoSize = true;
-			this->radioButton4->Location = System::Drawing::Point(9, 188);
-			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(146, 17);
-			this->radioButton4->TabIndex = 7;
-			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"Receive                 time(s)";
-			this->radioButton4->UseVisualStyleBackColor = true;
+			this->receivePacketCountRadio->AutoSize = true;
+			this->receivePacketCountRadio->Location = System::Drawing::Point(9, 188);
+			this->receivePacketCountRadio->Name = L"receivePacketCountRadio";
+			this->receivePacketCountRadio->Size = System::Drawing::Size(146, 17);
+			this->receivePacketCountRadio->TabIndex = 7;
+			this->receivePacketCountRadio->TabStop = true;
+			this->receivePacketCountRadio->Text = L"Receive                 time(s)";
+			this->receivePacketCountRadio->UseVisualStyleBackColor = true;
 			// 
-			// multiplePacketReceiveText
+			// multiplePacketReceiveTextBox
 			// 
-			this->multiplePacketReceiveText->Location = System::Drawing::Point(9, 22);
-			this->multiplePacketReceiveText->Multiline = true;
-			this->multiplePacketReceiveText->Name = L"multiplePacketReceiveText";
-			this->multiplePacketReceiveText->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->multiplePacketReceiveText->Size = System::Drawing::Size(374, 148);
-			this->multiplePacketReceiveText->TabIndex = 6;
+			this->multiplePacketReceiveTextBox->Location = System::Drawing::Point(9, 22);
+			this->multiplePacketReceiveTextBox->Multiline = true;
+			this->multiplePacketReceiveTextBox->Name = L"multiplePacketReceiveTextBox";
+			this->multiplePacketReceiveTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Both;
+			this->multiplePacketReceiveTextBox->Size = System::Drawing::Size(374, 148);
+			this->multiplePacketReceiveTextBox->TabIndex = 6;
 			// 
 			// multiplePacketReceiveButton
 			// 
@@ -465,7 +487,7 @@ namespace devtale
 			// groupBox6
 			// 
 			this->groupBox6->Controls->Add(this->singlePacketReceiveButton);
-			this->groupBox6->Controls->Add(this->singlePacketReceiveText);
+			this->groupBox6->Controls->Add(this->singlePacketReceiveTextBox);
 			this->groupBox6->Location = System::Drawing::Point(9, 9);
 			this->groupBox6->Name = L"groupBox6";
 			this->groupBox6->Padding = System::Windows::Forms::Padding(6);
@@ -483,12 +505,12 @@ namespace devtale
 			this->singlePacketReceiveButton->Text = L"Receive";
 			this->singlePacketReceiveButton->UseVisualStyleBackColor = true;
 			// 
-			// singlePacketReceiveText
+			// singlePacketReceiveTextBox
 			// 
-			this->singlePacketReceiveText->Location = System::Drawing::Point(9, 22);
-			this->singlePacketReceiveText->Name = L"singlePacketReceiveText";
-			this->singlePacketReceiveText->Size = System::Drawing::Size(374, 20);
-			this->singlePacketReceiveText->TabIndex = 0;
+			this->singlePacketReceiveTextBox->Location = System::Drawing::Point(9, 22);
+			this->singlePacketReceiveTextBox->Name = L"singlePacketReceiveTextBox";
+			this->singlePacketReceiveTextBox->Size = System::Drawing::Size(374, 20);
+			this->singlePacketReceiveTextBox->TabIndex = 0;
 			// 
 			// tabPage5
 			// 
@@ -505,9 +527,9 @@ namespace devtale
 			// groupBox8
 			// 
 			this->groupBox8->Controls->Add(this->newReceivedPacketFilterButton);
-			this->groupBox8->Controls->Add(this->removeSelectedReceiveFilter);
-			this->groupBox8->Controls->Add(this->newReceivedPacketFilterText);
-			this->groupBox8->Controls->Add(this->filterReceivedList);
+			this->groupBox8->Controls->Add(this->removeReceivedPacketFilterButton);
+			this->groupBox8->Controls->Add(this->newReceivedPacketFilterTextBox);
+			this->groupBox8->Controls->Add(this->filterReceivedPacketList);
 			this->groupBox8->Location = System::Drawing::Point(213, 6);
 			this->groupBox8->Name = L"groupBox8";
 			this->groupBox8->Size = System::Drawing::Size(201, 339);
@@ -524,36 +546,36 @@ namespace devtale
 			this->newReceivedPacketFilterButton->Text = L"Add";
 			this->newReceivedPacketFilterButton->UseVisualStyleBackColor = true;
 			// 
-			// removeSelectedReceiveFilter
+			// removeReceivedPacketFilterButton
 			// 
-			this->removeSelectedReceiveFilter->Location = System::Drawing::Point(6, 279);
-			this->removeSelectedReceiveFilter->Name = L"removeSelectedReceiveFilter";
-			this->removeSelectedReceiveFilter->Size = System::Drawing::Size(185, 23);
-			this->removeSelectedReceiveFilter->TabIndex = 2;
-			this->removeSelectedReceiveFilter->Text = L"Remove selected filter";
-			this->removeSelectedReceiveFilter->UseVisualStyleBackColor = true;
+			this->removeReceivedPacketFilterButton->Location = System::Drawing::Point(6, 279);
+			this->removeReceivedPacketFilterButton->Name = L"removeReceivedPacketFilterButton";
+			this->removeReceivedPacketFilterButton->Size = System::Drawing::Size(185, 23);
+			this->removeReceivedPacketFilterButton->TabIndex = 2;
+			this->removeReceivedPacketFilterButton->Text = L"Remove selected filter";
+			this->removeReceivedPacketFilterButton->UseVisualStyleBackColor = true;
 			// 
-			// newReceivedPacketFilterText
+			// newReceivedPacketFilterTextBox
 			// 
-			this->newReceivedPacketFilterText->Location = System::Drawing::Point(6, 309);
-			this->newReceivedPacketFilterText->Name = L"newReceivedPacketFilterText";
-			this->newReceivedPacketFilterText->Size = System::Drawing::Size(104, 20);
-			this->newReceivedPacketFilterText->TabIndex = 4;
+			this->newReceivedPacketFilterTextBox->Location = System::Drawing::Point(6, 309);
+			this->newReceivedPacketFilterTextBox->Name = L"newReceivedPacketFilterTextBox";
+			this->newReceivedPacketFilterTextBox->Size = System::Drawing::Size(104, 20);
+			this->newReceivedPacketFilterTextBox->TabIndex = 4;
 			// 
-			// filterReceivedList
+			// filterReceivedPacketList
 			// 
-			this->filterReceivedList->FormattingEnabled = true;
-			this->filterReceivedList->Location = System::Drawing::Point(6, 19);
-			this->filterReceivedList->Name = L"filterReceivedList";
-			this->filterReceivedList->Size = System::Drawing::Size(185, 251);
-			this->filterReceivedList->TabIndex = 1;
+			this->filterReceivedPacketList->FormattingEnabled = true;
+			this->filterReceivedPacketList->Location = System::Drawing::Point(6, 19);
+			this->filterReceivedPacketList->Name = L"filterReceivedPacketList";
+			this->filterReceivedPacketList->Size = System::Drawing::Size(185, 251);
+			this->filterReceivedPacketList->TabIndex = 1;
 			// 
 			// groupBox7
 			// 
 			this->groupBox7->Controls->Add(this->newSentPacketFilterButton);
-			this->groupBox7->Controls->Add(this->newSentPacketFilterText);
-			this->groupBox7->Controls->Add(this->removeSentPacketFilter);
-			this->groupBox7->Controls->Add(this->filterSentList);
+			this->groupBox7->Controls->Add(this->newSentPacketFilterTextBox);
+			this->groupBox7->Controls->Add(this->removeSentPacketFilterButton);
+			this->groupBox7->Controls->Add(this->filterSentPacketList);
 			this->groupBox7->Location = System::Drawing::Point(7, 6);
 			this->groupBox7->Name = L"groupBox7";
 			this->groupBox7->Size = System::Drawing::Size(196, 339);
@@ -570,29 +592,29 @@ namespace devtale
 			this->newSentPacketFilterButton->Text = L"Add";
 			this->newSentPacketFilterButton->UseVisualStyleBackColor = true;
 			// 
-			// newSentPacketFilterText
+			// newSentPacketFilterTextBox
 			// 
-			this->newSentPacketFilterText->Location = System::Drawing::Point(6, 308);
-			this->newSentPacketFilterText->Name = L"newSentPacketFilterText";
-			this->newSentPacketFilterText->Size = System::Drawing::Size(103, 20);
-			this->newSentPacketFilterText->TabIndex = 2;
+			this->newSentPacketFilterTextBox->Location = System::Drawing::Point(6, 308);
+			this->newSentPacketFilterTextBox->Name = L"newSentPacketFilterTextBox";
+			this->newSentPacketFilterTextBox->Size = System::Drawing::Size(103, 20);
+			this->newSentPacketFilterTextBox->TabIndex = 2;
 			// 
-			// removeSentPacketFilter
+			// removeSentPacketFilterButton
 			// 
-			this->removeSentPacketFilter->Location = System::Drawing::Point(6, 279);
-			this->removeSentPacketFilter->Name = L"removeSentPacketFilter";
-			this->removeSentPacketFilter->Size = System::Drawing::Size(184, 23);
-			this->removeSentPacketFilter->TabIndex = 1;
-			this->removeSentPacketFilter->Text = L"Remove selected filter";
-			this->removeSentPacketFilter->UseVisualStyleBackColor = true;
+			this->removeSentPacketFilterButton->Location = System::Drawing::Point(6, 279);
+			this->removeSentPacketFilterButton->Name = L"removeSentPacketFilterButton";
+			this->removeSentPacketFilterButton->Size = System::Drawing::Size(184, 23);
+			this->removeSentPacketFilterButton->TabIndex = 1;
+			this->removeSentPacketFilterButton->Text = L"Remove selected filter";
+			this->removeSentPacketFilterButton->UseVisualStyleBackColor = true;
 			// 
-			// filterSentList
+			// filterSentPacketList
 			// 
-			this->filterSentList->FormattingEnabled = true;
-			this->filterSentList->Location = System::Drawing::Point(6, 19);
-			this->filterSentList->Name = L"filterSentList";
-			this->filterSentList->Size = System::Drawing::Size(184, 251);
-			this->filterSentList->TabIndex = 0;
+			this->filterSentPacketList->FormattingEnabled = true;
+			this->filterSentPacketList->Location = System::Drawing::Point(6, 19);
+			this->filterSentPacketList->Name = L"filterSentPacketList";
+			this->filterSentPacketList->Size = System::Drawing::Size(184, 251);
+			this->filterSentPacketList->TabIndex = 0;
 			// 
 			// groupBox1
 			// 
@@ -691,7 +713,7 @@ namespace devtale
 			// 
 			// groupBox9
 			// 
-			this->groupBox9->Controls->Add(this->textBox3);
+			this->groupBox9->Controls->Add(this->luaTextBox);
 			this->groupBox9->Location = System::Drawing::Point(6, 6);
 			this->groupBox9->Name = L"groupBox9";
 			this->groupBox9->Size = System::Drawing::Size(605, 461);
@@ -699,13 +721,13 @@ namespace devtale
 			this->groupBox9->TabStop = false;
 			this->groupBox9->Text = L"Editor";
 			// 
-			// textBox3
+			// luaTextBox
 			// 
-			this->textBox3->Location = System::Drawing::Point(6, 19);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(593, 436);
-			this->textBox3->TabIndex = 0;
+			this->luaTextBox->Location = System::Drawing::Point(6, 19);
+			this->luaTextBox->Multiline = true;
+			this->luaTextBox->Name = L"luaTextBox";
+			this->luaTextBox->Size = System::Drawing::Size(593, 436);
+			this->luaTextBox->TabIndex = 0;
 			// 
 			// tabPage2
 			// 
