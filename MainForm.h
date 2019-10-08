@@ -167,7 +167,6 @@ namespace devtale
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -175,12 +174,6 @@ namespace devtale
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketSendButton = (gcnew System::Windows::Forms::Button());
 			this->multiplePacketSendText = (gcnew System::Windows::Forms::TextBox());
-			this->packetLogTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->enableReceivedPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->enableSentPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->logSentPacketCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->logReceivePacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->singlePacketSendButton = (gcnew System::Windows::Forms::Button());
 			this->singlePacketSendText = (gcnew System::Windows::Forms::TextBox());
@@ -206,6 +199,13 @@ namespace devtale
 			this->newSentPacketFilterText = (gcnew System::Windows::Forms::TextBox());
 			this->removeSentPacketFilter = (gcnew System::Windows::Forms::Button());
 			this->filterSentList = (gcnew System::Windows::Forms::ListBox());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->packetLogTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->enableReceivedPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->enableSentPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->logSentPacketCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->logReceivePacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
@@ -216,9 +216,7 @@ namespace devtale
 			this->tabPage1->SuspendLayout();
 			this->tabControl2->SuspendLayout();
 			this->tabPage3->SuspendLayout();
-			this->groupBox1->SuspendLayout();
 			this->groupBox4->SuspendLayout();
-			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->tabPage4->SuspendLayout();
 			this->groupBox5->SuspendLayout();
@@ -226,6 +224,8 @@ namespace devtale
 			this->tabPage5->SuspendLayout();
 			this->groupBox8->SuspendLayout();
 			this->groupBox7->SuspendLayout();
+			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->tabPage6->SuspendLayout();
 			this->groupBox9->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -277,17 +277,6 @@ namespace devtale
 			this->tabPage3->TabIndex = 0;
 			this->tabPage3->Text = L"Send packets";
 			this->tabPage3->UseVisualStyleBackColor = true;
-			// 
-			// groupBox1
-			// 
-			this->groupBox1->Controls->Add(this->packetLogTextBox);
-			this->groupBox1->Location = System::Drawing::Point(6, 6);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(6);
-			this->groupBox1->Size = System::Drawing::Size(358, 461);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Log";
 			// 
 			// groupBox4
 			// 
@@ -360,69 +349,6 @@ namespace devtale
 			this->multiplePacketSendText->ScrollBars = System::Windows::Forms::ScrollBars::Both;
 			this->multiplePacketSendText->Size = System::Drawing::Size(374, 148);
 			this->multiplePacketSendText->TabIndex = 0;
-			// 
-			// packetLogTextBox
-			// 
-			this->packetLogTextBox->Location = System::Drawing::Point(9, 22);
-			this->packetLogTextBox->Multiline = true;
-			this->packetLogTextBox->Name = L"packetLogTextBox";
-			this->packetLogTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->packetLogTextBox->Size = System::Drawing::Size(340, 430);
-			this->packetLogTextBox->TabIndex = 0;
-			// 
-			// groupBox2
-			// 
-			this->groupBox2->Controls->Add(this->enableReceivedPacketFilterCheckBox);
-			this->groupBox2->Controls->Add(this->enableSentPacketFilterCheckBox);
-			this->groupBox2->Controls->Add(this->logSentPacketCheckBox);
-			this->groupBox2->Controls->Add(this->logReceivePacketsCheckBox);
-			this->groupBox2->Location = System::Drawing::Point(370, 6);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(6);
-			this->groupBox2->Size = System::Drawing::Size(200, 78);
-			this->groupBox2->TabIndex = 1;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Enable logging";
-			// 
-			// enableReceivedPacketFilterCheckBox
-			// 
-			this->enableReceivedPacketFilterCheckBox->AutoSize = true;
-			this->enableReceivedPacketFilterCheckBox->Location = System::Drawing::Point(130, 47);
-			this->enableReceivedPacketFilterCheckBox->Name = L"enableReceivedPacketFilterCheckBox";
-			this->enableReceivedPacketFilterCheckBox->Size = System::Drawing::Size(61, 17);
-			this->enableReceivedPacketFilterCheckBox->TabIndex = 3;
-			this->enableReceivedPacketFilterCheckBox->Text = L"w\\ filter";
-			this->enableReceivedPacketFilterCheckBox->UseVisualStyleBackColor = true;
-			// 
-			// enableSentPacketFilterCheckBox
-			// 
-			this->enableSentPacketFilterCheckBox->AutoSize = true;
-			this->enableSentPacketFilterCheckBox->Location = System::Drawing::Point(130, 24);
-			this->enableSentPacketFilterCheckBox->Name = L"enableSentPacketFilterCheckBox";
-			this->enableSentPacketFilterCheckBox->Size = System::Drawing::Size(61, 17);
-			this->enableSentPacketFilterCheckBox->TabIndex = 2;
-			this->enableSentPacketFilterCheckBox->Text = L"w\\ filter";
-			this->enableSentPacketFilterCheckBox->UseVisualStyleBackColor = true;
-			// 
-			// logSentPacketCheckBox
-			// 
-			this->logSentPacketCheckBox->AutoSize = true;
-			this->logSentPacketCheckBox->Location = System::Drawing::Point(11, 24);
-			this->logSentPacketCheckBox->Name = L"logSentPacketCheckBox";
-			this->logSentPacketCheckBox->Size = System::Drawing::Size(89, 17);
-			this->logSentPacketCheckBox->TabIndex = 1;
-			this->logSentPacketCheckBox->Text = L"Sent packets";
-			this->logSentPacketCheckBox->UseVisualStyleBackColor = true;
-			// 
-			// logReceivePacketsCheckBox
-			// 
-			this->logReceivePacketsCheckBox->AutoSize = true;
-			this->logReceivePacketsCheckBox->Location = System::Drawing::Point(11, 47);
-			this->logReceivePacketsCheckBox->Name = L"logReceivePacketsCheckBox";
-			this->logReceivePacketsCheckBox->Size = System::Drawing::Size(113, 17);
-			this->logReceivePacketsCheckBox->TabIndex = 0;
-			this->logReceivePacketsCheckBox->Text = L"Received packets";
-			this->logReceivePacketsCheckBox->UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
 			// 
@@ -668,6 +594,80 @@ namespace devtale
 			this->filterSentList->Size = System::Drawing::Size(184, 251);
 			this->filterSentList->TabIndex = 0;
 			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->packetLogTextBox);
+			this->groupBox1->Location = System::Drawing::Point(6, 6);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Padding = System::Windows::Forms::Padding(6);
+			this->groupBox1->Size = System::Drawing::Size(358, 461);
+			this->groupBox1->TabIndex = 0;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Log";
+			// 
+			// packetLogTextBox
+			// 
+			this->packetLogTextBox->Location = System::Drawing::Point(9, 22);
+			this->packetLogTextBox->Multiline = true;
+			this->packetLogTextBox->Name = L"packetLogTextBox";
+			this->packetLogTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->packetLogTextBox->Size = System::Drawing::Size(340, 430);
+			this->packetLogTextBox->TabIndex = 0;
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->enableReceivedPacketFilterCheckBox);
+			this->groupBox2->Controls->Add(this->enableSentPacketFilterCheckBox);
+			this->groupBox2->Controls->Add(this->logSentPacketCheckBox);
+			this->groupBox2->Controls->Add(this->logReceivePacketsCheckBox);
+			this->groupBox2->Location = System::Drawing::Point(370, 6);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Padding = System::Windows::Forms::Padding(6);
+			this->groupBox2->Size = System::Drawing::Size(200, 78);
+			this->groupBox2->TabIndex = 1;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Enable logging";
+			// 
+			// enableReceivedPacketFilterCheckBox
+			// 
+			this->enableReceivedPacketFilterCheckBox->AutoSize = true;
+			this->enableReceivedPacketFilterCheckBox->Location = System::Drawing::Point(130, 47);
+			this->enableReceivedPacketFilterCheckBox->Name = L"enableReceivedPacketFilterCheckBox";
+			this->enableReceivedPacketFilterCheckBox->Size = System::Drawing::Size(61, 17);
+			this->enableReceivedPacketFilterCheckBox->TabIndex = 3;
+			this->enableReceivedPacketFilterCheckBox->Text = L"w\\ filter";
+			this->enableReceivedPacketFilterCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// enableSentPacketFilterCheckBox
+			// 
+			this->enableSentPacketFilterCheckBox->AutoSize = true;
+			this->enableSentPacketFilterCheckBox->Location = System::Drawing::Point(130, 24);
+			this->enableSentPacketFilterCheckBox->Name = L"enableSentPacketFilterCheckBox";
+			this->enableSentPacketFilterCheckBox->Size = System::Drawing::Size(61, 17);
+			this->enableSentPacketFilterCheckBox->TabIndex = 2;
+			this->enableSentPacketFilterCheckBox->Text = L"w\\ filter";
+			this->enableSentPacketFilterCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// logSentPacketCheckBox
+			// 
+			this->logSentPacketCheckBox->AutoSize = true;
+			this->logSentPacketCheckBox->Location = System::Drawing::Point(11, 24);
+			this->logSentPacketCheckBox->Name = L"logSentPacketCheckBox";
+			this->logSentPacketCheckBox->Size = System::Drawing::Size(89, 17);
+			this->logSentPacketCheckBox->TabIndex = 1;
+			this->logSentPacketCheckBox->Text = L"Sent packets";
+			this->logSentPacketCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// logReceivePacketsCheckBox
+			// 
+			this->logReceivePacketsCheckBox->AutoSize = true;
+			this->logReceivePacketsCheckBox->Location = System::Drawing::Point(11, 47);
+			this->logReceivePacketsCheckBox->Name = L"logReceivePacketsCheckBox";
+			this->logReceivePacketsCheckBox->Size = System::Drawing::Size(113, 17);
+			this->logReceivePacketsCheckBox->TabIndex = 0;
+			this->logReceivePacketsCheckBox->Text = L"Received packets";
+			this->logReceivePacketsCheckBox->UseVisualStyleBackColor = true;
+			// 
 			// tabPage6
 			// 
 			this->tabPage6->Controls->Add(this->groupBox10);
@@ -736,17 +736,13 @@ namespace devtale
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MainForm";
 			this->Padding = System::Windows::Forms::Padding(3);
-			this->Text = L"DevTale [1.0] by Xeno";
+			this->Text = L"DevTale";
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabControl2->ResumeLayout(false);
 			this->tabPage3->ResumeLayout(false);
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
-			this->groupBox2->ResumeLayout(false);
-			this->groupBox2->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabPage4->ResumeLayout(false);
@@ -759,6 +755,10 @@ namespace devtale
 			this->groupBox8->PerformLayout();
 			this->groupBox7->ResumeLayout(false);
 			this->groupBox7->PerformLayout();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->tabPage6->ResumeLayout(false);
 			this->groupBox9->ResumeLayout(false);
 			this->groupBox9->PerformLayout();
