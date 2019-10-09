@@ -45,13 +45,13 @@ namespace devtale {
 		Memory::detour(reinterpret_cast<BYTE*>(_receive), reinterpret_cast<BYTE*>(hookedReceive), 14);
 	}
 
-	void __fastcall Protocol::onPacketSend(char* packet)
+	void __stdcall Protocol::onPacketSend(char* packet)
 	{
 		const std::string ps(packet);
 		get()->handler_->onPacketSend(packet);
 	}
 
-	void __fastcall Protocol::onPacketReceive(char* packet)
+	void __stdcall Protocol::onPacketReceive(char* packet)
 	{
 		const std::string ps(packet);
 		get()->handler_->onPacketReceive(packet);

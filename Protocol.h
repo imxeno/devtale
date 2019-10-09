@@ -26,8 +26,8 @@ private:
 	void setup();
 	static void hookedSend();
 	static void hookedReceive();
-	static void __fastcall onPacketSend(char* packet);
-	static void __fastcall onPacketReceive(char* packet);
+	static void __stdcall onPacketSend(char* packet);
+	static void __stdcall onPacketReceive(char* packet);
 	DWORD _ptr = 0, _send = 0, _receive = 0;
 	PacketHandler *handler_;
 };
