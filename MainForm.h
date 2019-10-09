@@ -758,6 +758,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->ClientSize = System::Drawing::Size(814, 511);
 			this->Controls->Add(this->tabControl1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MainForm";
 			this->Padding = System::Windows::Forms::Padding(3);
 			this->Text = L"DevTale";
