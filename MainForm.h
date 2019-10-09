@@ -87,9 +87,10 @@ namespace devtale
 	private:
 
 	private: System::Windows::Forms::TextBox^ sendPacketCountTextBox;
+	private: System::Windows::Forms::RadioButton^ sendPacketIntervalRadio;
 	private:
 
-	private: System::Windows::Forms::RadioButton^ sendPacketInfiniteRadio;
+
 	private:
 
 	private: System::Windows::Forms::RadioButton^ sendPacketCountRadio;
@@ -177,14 +178,16 @@ public: System::Windows::Forms::ListBox^ filterSentPacketList;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox9;
 private: System::Windows::Forms::TextBox^ luaTextBox;
-	private:
+private: System::Windows::Forms::Timer^ sendTimer;
+private: System::Windows::Forms::Timer^ receiveTimer;
+private: System::ComponentModel::IContainer^ components;
 
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -193,6 +196,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
@@ -201,7 +205,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->sendPacketIntervalTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->sendPacketCountTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->sendPacketInfiniteRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->sendPacketIntervalRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->sendPacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketSendButton = (gcnew System::Windows::Forms::Button());
 			this->multiplePacketSendTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -243,6 +247,8 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->luaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->receiveTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabControl2->SuspendLayout();
@@ -313,7 +319,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			// 
 			this->groupBox4->Controls->Add(this->sendPacketIntervalTextBox);
 			this->groupBox4->Controls->Add(this->sendPacketCountTextBox);
-			this->groupBox4->Controls->Add(this->sendPacketInfiniteRadio);
+			this->groupBox4->Controls->Add(this->sendPacketIntervalRadio);
 			this->groupBox4->Controls->Add(this->sendPacketCountRadio);
 			this->groupBox4->Controls->Add(this->multiplePacketSendButton);
 			this->groupBox4->Controls->Add(this->multiplePacketSendTextBox);
@@ -332,6 +338,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->sendPacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->sendPacketIntervalTextBox->TabIndex = 5;
 			this->sendPacketIntervalTextBox->Text = L"100";
+			this->sendPacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::SendPacketIntervalTextBox_TextChanged);
 			// 
 			// sendPacketCountTextBox
 			// 
@@ -341,15 +348,15 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->sendPacketCountTextBox->TabIndex = 4;
 			this->sendPacketCountTextBox->Text = L"1";
 			// 
-			// sendPacketInfiniteRadio
+			// sendPacketIntervalRadio
 			// 
-			this->sendPacketInfiniteRadio->AutoSize = true;
-			this->sendPacketInfiniteRadio->Location = System::Drawing::Point(146, 188);
-			this->sendPacketInfiniteRadio->Name = L"sendPacketInfiniteRadio";
-			this->sendPacketInfiniteRadio->Size = System::Drawing::Size(164, 17);
-			this->sendPacketInfiniteRadio->TabIndex = 3;
-			this->sendPacketInfiniteRadio->Text = L"Send every                        ms";
-			this->sendPacketInfiniteRadio->UseVisualStyleBackColor = true;
+			this->sendPacketIntervalRadio->AutoSize = true;
+			this->sendPacketIntervalRadio->Location = System::Drawing::Point(146, 188);
+			this->sendPacketIntervalRadio->Name = L"sendPacketIntervalRadio";
+			this->sendPacketIntervalRadio->Size = System::Drawing::Size(164, 17);
+			this->sendPacketIntervalRadio->TabIndex = 3;
+			this->sendPacketIntervalRadio->Text = L"Send every                        ms";
+			this->sendPacketIntervalRadio->UseVisualStyleBackColor = true;
 			// 
 			// sendPacketCountRadio
 			// 
@@ -446,6 +453,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->receivePacketIntervalTextBox->TabIndex = 10;
 			this->receivePacketIntervalTextBox->Text = L"100";
+			this->receivePacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::ReceivePacketIntervalTextBox_TextChanged);
 			// 
 			// receivePacketCountTextBox
 			// 
@@ -770,6 +778,14 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->label1->TabIndex = 0;
 			this->label1->Text = resources->GetString(L"label1.Text");
 			// 
+			// sendTimer
+			// 
+			this->sendTimer->Tick += gcnew System::EventHandler(this, &MainForm::SendTimer_Tick);
+			// 
+			// receiveTimer
+			// 
+			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -818,19 +834,49 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 		devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
 	}
 private: System::Void MultiplePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	auto en = multiplePacketSendTextBox->Lines->GetEnumerator();
-	while(en->MoveNext())
+	if (sendPacketCountRadio->Checked) {
+		auto count = System::Convert::ToInt32(sendPacketCountTextBox->Text);
+		for (int i = 0; i < count; i++) {
+			MultipleSendPackets();
+		}
+	}
+	else if (sendPacketIntervalRadio->Checked)
 	{
-		devtale::Protocol::get()->send(marshal_as<std::string>((System::String^)en->Current));
+		if (sendTimer->Enabled)
+			sendTimer->Stop();
+		else sendTimer->Start();
 	}
 }
+	private: System::Void MultipleSendPackets()
+	{
+		auto en = multiplePacketSendTextBox->Lines->GetEnumerator();
+		while (en->MoveNext())
+		{
+			devtale::Protocol::get()->send(marshal_as<std::string>((System::String^)en->Current));
+		}
+	}
 private: System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	auto en = multiplePacketReceiveTextBox->Lines->GetEnumerator();
-	while (en->MoveNext())
+	if (receivePacketCountRadio->Checked) {
+		auto count = System::Convert::ToInt32(receivePacketCountTextBox->Text);
+		for (int i = 0; i < count; i++) {
+			MultipleReceivePackets();
+		}
+	}
+	else if (receivePacketIntervalRadio->Checked)
 	{
-		devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
+		if (receiveTimer->Enabled)
+			receiveTimer->Stop();
+		else receiveTimer->Start();
 	}
 }
+		private: System::Void MultipleReceivePackets()
+		{
+			auto en = multiplePacketReceiveTextBox->Lines->GetEnumerator();
+			while (en->MoveNext())
+			{
+				devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
+			}
+		}
 private: System::Void NewSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if(newSentPacketFilterTextBox->Text == String::Empty)
 	{
@@ -857,5 +903,18 @@ private: System::Void RemoveReceivedPacketFilterButton_Click(System::Object^ sen
 	if (filterReceivedPacketList->SelectedIndex == -1) return;
 	filterReceivedPacketList->Items->RemoveAt(filterReceivedPacketList->SelectedIndex);
 }
+private: System::Void SendTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
+	MultipleSendPackets();
+}
+private: System::Void ReceiveTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
+	MultipleReceivePackets();
+}
+private: System::Void SendPacketIntervalTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	sendTimer->Interval = System::Convert::ToInt32(sendPacketIntervalTextBox->Text);
+}
+private: System::Void ReceivePacketIntervalTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	receiveTimer->Interval = System::Convert::ToInt32(receivePacketIntervalTextBox->Text);
+}
+
 };
 }
