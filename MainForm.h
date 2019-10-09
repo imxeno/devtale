@@ -82,11 +82,11 @@ namespace devtale
 		System::Windows::Forms::TabPage^ tabPage4;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox4;
-	private: System::Windows::Forms::TextBox^ sendPacketIntervalTextBox;
+	private: System::Windows::Forms::NumericUpDown^ sendPacketIntervalTextBox;
 
 	private:
 
-	private: System::Windows::Forms::TextBox^ sendPacketCountTextBox;
+	private: System::Windows::Forms::NumericUpDown^ sendPacketCountTextBox;
 	private: System::Windows::Forms::RadioButton^ sendPacketIntervalRadio;
 	private:
 
@@ -113,10 +113,10 @@ namespace devtale
 
 	private:
 		System::Windows::Forms::GroupBox^ groupBox5;
-	private: System::Windows::Forms::TextBox^ receivePacketIntervalTextBox;
+	private: System::Windows::Forms::NumericUpDown^ receivePacketIntervalTextBox;
 	private:
 
-	private: System::Windows::Forms::TextBox^ receivePacketCountTextBox;
+	private: System::Windows::Forms::NumericUpDown^ receivePacketCountTextBox;
 	private:
 
 	private: System::Windows::Forms::RadioButton^ receivePacketIntervalRadio;
@@ -203,8 +203,8 @@ private: System::ComponentModel::IContainer^ components;
 			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->sendPacketIntervalTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->sendPacketCountTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->sendPacketIntervalTextBox = (gcnew System::Windows::Forms::NumericUpDown());
+			this->sendPacketCountTextBox = (gcnew System::Windows::Forms::NumericUpDown());
 			this->sendPacketIntervalRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->sendPacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketSendButton = (gcnew System::Windows::Forms::Button());
@@ -214,8 +214,8 @@ private: System::ComponentModel::IContainer^ components;
 			this->singlePacketSendTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->receivePacketIntervalTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->receivePacketCountTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->receivePacketIntervalTextBox = (gcnew System::Windows::Forms::NumericUpDown());
+			this->receivePacketCountTextBox = (gcnew System::Windows::Forms::NumericUpDown());
 			this->receivePacketIntervalRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->receivePacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketReceiveTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -254,9 +254,13 @@ private: System::ComponentModel::IContainer^ components;
 			this->tabControl2->SuspendLayout();
 			this->tabPage3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendPacketIntervalTextBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendPacketCountTextBox))->BeginInit();
 			this->groupBox3->SuspendLayout();
 			this->tabPage4->SuspendLayout();
 			this->groupBox5->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->receivePacketIntervalTextBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->receivePacketCountTextBox))->BeginInit();
 			this->groupBox6->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->groupBox8->SuspendLayout();
@@ -334,19 +338,22 @@ private: System::ComponentModel::IContainer^ components;
 			// sendPacketIntervalTextBox
 			// 
 			this->sendPacketIntervalTextBox->Location = System::Drawing::Point(226, 187);
+			this->sendPacketIntervalTextBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 60000, 0, 0, 0 });
+			this->sendPacketIntervalTextBox->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->sendPacketIntervalTextBox->Name = L"sendPacketIntervalTextBox";
 			this->sendPacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->sendPacketIntervalTextBox->TabIndex = 5;
-			this->sendPacketIntervalTextBox->Text = L"100";
+			this->sendPacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->sendPacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::SendPacketIntervalTextBox_TextChanged);
 			// 
 			// sendPacketCountTextBox
 			// 
 			this->sendPacketCountTextBox->Location = System::Drawing::Point(59, 187);
+			this->sendPacketCountTextBox->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->sendPacketCountTextBox->Name = L"sendPacketCountTextBox";
 			this->sendPacketCountTextBox->Size = System::Drawing::Size(37, 20);
 			this->sendPacketCountTextBox->TabIndex = 4;
-			this->sendPacketCountTextBox->Text = L"1";
+			this->sendPacketCountTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// sendPacketIntervalRadio
 			// 
@@ -449,19 +456,22 @@ private: System::ComponentModel::IContainer^ components;
 			// receivePacketIntervalTextBox
 			// 
 			this->receivePacketIntervalTextBox->Location = System::Drawing::Point(255, 187);
+			this->receivePacketIntervalTextBox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 60000, 0, 0, 0 });
+			this->receivePacketIntervalTextBox->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->receivePacketIntervalTextBox->Name = L"receivePacketIntervalTextBox";
 			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->receivePacketIntervalTextBox->TabIndex = 10;
-			this->receivePacketIntervalTextBox->Text = L"100";
+			this->receivePacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->receivePacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::ReceivePacketIntervalTextBox_TextChanged);
 			// 
 			// receivePacketCountTextBox
 			// 
 			this->receivePacketCountTextBox->Location = System::Drawing::Point(74, 187);
+			this->receivePacketCountTextBox->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->receivePacketCountTextBox->Name = L"receivePacketCountTextBox";
 			this->receivePacketCountTextBox->Size = System::Drawing::Size(37, 20);
 			this->receivePacketCountTextBox->TabIndex = 9;
-			this->receivePacketCountTextBox->Text = L"1";
+			this->receivePacketCountTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// receivePacketIntervalRadio
 			// 
@@ -802,11 +812,15 @@ private: System::ComponentModel::IContainer^ components;
 			this->tabPage3->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendPacketIntervalTextBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendPacketCountTextBox))->EndInit();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabPage4->ResumeLayout(false);
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->receivePacketIntervalTextBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->receivePacketCountTextBox))->EndInit();
 			this->groupBox6->ResumeLayout(false);
 			this->groupBox6->PerformLayout();
 			this->tabPage5->ResumeLayout(false);
