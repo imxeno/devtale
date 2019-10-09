@@ -28,7 +28,7 @@ private:
 	static void hookedReceive();
 	static void __stdcall onPacketSend(char* packet);
 	static void __stdcall onPacketReceive(char* packet);
-	DWORD _ptr = 0, _send = 0, _receive = 0;
+	DWORD ptr_ = 0, send_ = 0, receive_ = 0;
 	PacketHandler *handler_;
 };
 

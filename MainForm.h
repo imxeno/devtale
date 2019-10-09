@@ -3,6 +3,7 @@
 
 #include <msclr\marshal_cppstd.h>
 
+// ReSharper disable all
 namespace devtale
 {
 	using namespace System;
@@ -180,7 +181,7 @@ public: System::Windows::Forms::ListBox^ filterSentPacketList;
 
 private: System::Windows::Forms::Timer^ sendTimer;
 private: System::Windows::Forms::Timer^ receiveTimer;
-private: System::ComponentModel::IContainer^ components;
+	private: System::ComponentModel::IContainer^ components;
 
 
 	private:
@@ -893,3 +894,5 @@ private: System::Void ReceivePacketIntervalTextBox_ValueChanged(System::Object^ 
 }
 };
 }
+
+// ReSharper restore all

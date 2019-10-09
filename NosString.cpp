@@ -2,24 +2,24 @@
 
 NosString::NosString(char* i8_string)
 {
-	this->_i32_length = strlen(i8_string);
+	this->i32_length_ = strlen(i8_string);
 
-	this->_i8_string = static_cast<char*>(malloc(this->_i32_length + 8 + 1));
+	this->i8_string_ = static_cast<char*>(malloc(this->i32_length_ + 8 + 1));
 
-	*reinterpret_cast<unsigned long*>(this->_i8_string + 0x00) = 1;
-	*reinterpret_cast<unsigned long*>(this->_i8_string + 0x04) = this->_i32_length;
+	*reinterpret_cast<unsigned long*>(this->i8_string_ + 0x00) = 1;
+	*reinterpret_cast<unsigned long*>(this->i8_string_ + 0x04) = this->i32_length_;
 
-	memcpy(this->_i8_string + 0x08, i8_string, this->_i32_length);
+	memcpy(this->i8_string_ + 0x08, i8_string, this->i32_length_);
 
-	*(this->_i8_string + this->_i32_length + 8) = '\0';
+	*(this->i8_string_ + this->i32_length_ + 8) = '\0';
 }
 
 char* NosString::get() const
 {
-	return this->_i8_string + 0x08;
+	return this->i8_string_ + 0x08;
 }
 
 unsigned long NosString::length() const
 {
-	return this->_i32_length;
+	return this->i32_length_;
 }

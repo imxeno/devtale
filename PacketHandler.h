@@ -16,8 +16,8 @@ public:
 		form_ = form;
 	}
 
-	void onPacketSend(std::string packet);
-	void onPacketReceive(std::string packet);
+	void onPacketSend(std::string packet) const;
+	void onPacketReceive(std::string packet) const;
 	
 };
 

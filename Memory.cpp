@@ -1,4 +1,7 @@
 #include "Memory.h"
+
+#include <iostream>
+
 #pragma managed(push, off)
 #pragma optimize("", off)
 bool Memory::detour(BYTE* old_func, BYTE* new_func, const DWORD len)

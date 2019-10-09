@@ -3,8 +3,8 @@
 class NosString
 {
 private:
-	char* _i8_string;
-	unsigned long _i32_length;
+	char* i8_string_;
+	unsigned long i32_length_;
 
 public:
 	explicit NosString(char* i8_string);

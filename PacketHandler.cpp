@@ -1,6 +1,6 @@
 #include "PacketHandler.h"
 
-void devtale::PacketHandler::onPacketSend(std::string packet)
+void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
 	if (!form_->logSentPacketsCheckBox->Checked) return;
 	String^ s = gcnew String(packet.c_str()) + "\r\n";
@@ -13,7 +13,7 @@ void devtale::PacketHandler::onPacketSend(std::string packet)
 	form_->packetLogTextBox->AppendText(s);
 }
 
-void devtale::PacketHandler::onPacketReceive(std::string packet)
+void devtale::PacketHandler::onPacketReceive(std::string packet) const
 {
 	if (!form_->logReceivedPacketsCheckBox->Checked) return;
 	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
