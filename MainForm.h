@@ -172,12 +172,12 @@ public: System::Windows::Forms::ListBox^ filterSentPacketList;
 	private:
 
 	private:
-		System::Windows::Forms::TabPage^ tabPage6;
+
 	private:
-		System::Windows::Forms::GroupBox^ groupBox10;
+
 	private:
-		System::Windows::Forms::GroupBox^ groupBox9;
-private: System::Windows::Forms::TextBox^ luaTextBox;
+
+
 private: System::Windows::Forms::Timer^ sendTimer;
 private: System::Windows::Forms::Timer^ receiveTimer;
 private: System::ComponentModel::IContainer^ components;
@@ -241,10 +241,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->enableSentPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->logSentPacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->logReceivedPacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
-			this->luaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
@@ -267,15 +263,12 @@ private: System::ComponentModel::IContainer^ components;
 			this->groupBox7->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
-			this->tabPage6->SuspendLayout();
-			this->groupBox9->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Location = System::Drawing::Point(6, 6);
 			this->tabControl1->Name = L"tabControl1";
@@ -729,45 +722,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->logReceivedPacketsCheckBox->Text = L"Received packets";
 			this->logReceivedPacketsCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// tabPage6
-			// 
-			this->tabPage6->Controls->Add(this->groupBox10);
-			this->tabPage6->Controls->Add(this->groupBox9);
-			this->tabPage6->Location = System::Drawing::Point(4, 22);
-			this->tabPage6->Name = L"tabPage6";
-			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage6->Size = System::Drawing::Size(794, 473);
-			this->tabPage6->TabIndex = 2;
-			this->tabPage6->Text = L"Lua IDE";
-			this->tabPage6->UseVisualStyleBackColor = true;
-			// 
-			// groupBox10
-			// 
-			this->groupBox10->Location = System::Drawing::Point(617, 6);
-			this->groupBox10->Name = L"groupBox10";
-			this->groupBox10->Size = System::Drawing::Size(171, 461);
-			this->groupBox10->TabIndex = 1;
-			this->groupBox10->TabStop = false;
-			this->groupBox10->Text = L"Menu";
-			// 
-			// groupBox9
-			// 
-			this->groupBox9->Controls->Add(this->luaTextBox);
-			this->groupBox9->Location = System::Drawing::Point(6, 6);
-			this->groupBox9->Name = L"groupBox9";
-			this->groupBox9->Size = System::Drawing::Size(605, 461);
-			this->groupBox9->TabIndex = 0;
-			this->groupBox9->TabStop = false;
-			this->groupBox9->Text = L"Editor";
-			// 
-			// luaTextBox
-			// 
-			this->luaTextBox->Location = System::Drawing::Point(6, 19);
-			this->luaTextBox->Multiline = true;
-			this->luaTextBox->Name = L"luaTextBox";
-			this->luaTextBox->Size = System::Drawing::Size(593, 436);
-			this->luaTextBox->TabIndex = 0;
-			// 
 			// tabPage2
 			// 
 			this->tabPage2->Controls->Add(this->label1);
@@ -832,9 +786,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
-			this->tabPage6->ResumeLayout(false);
-			this->groupBox9->ResumeLayout(false);
-			this->groupBox9->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			this->ResumeLayout(false);
