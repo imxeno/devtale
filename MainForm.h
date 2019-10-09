@@ -298,7 +298,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->tabControl2->Location = System::Drawing::Point(370, 90);
 			this->tabControl2->Name = L"tabControl2";
 			this->tabControl2->SelectedIndex = 0;
-			this->tabControl2->Size = System::Drawing::Size(418, 377);
+			this->tabControl2->Size = System::Drawing::Size(418, 376);
 			this->tabControl2->TabIndex = 2;
 			// 
 			// tabPage3
@@ -543,8 +543,8 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->tabPage5->Controls->Add(this->groupBox7);
 			this->tabPage5->Location = System::Drawing::Point(4, 22);
 			this->tabPage5->Name = L"tabPage5";
-			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage5->Size = System::Drawing::Size(410, 351);
+			this->tabPage5->Padding = System::Windows::Forms::Padding(6);
+			this->tabPage5->Size = System::Drawing::Size(410, 350);
 			this->tabPage5->TabIndex = 2;
 			this->tabPage5->Text = L"Filters";
 			this->tabPage5->UseVisualStyleBackColor = true;
@@ -555,16 +555,16 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->groupBox8->Controls->Add(this->removeReceivedPacketFilterButton);
 			this->groupBox8->Controls->Add(this->newReceivedPacketFilterTextBox);
 			this->groupBox8->Controls->Add(this->filterReceivedPacketList);
-			this->groupBox8->Location = System::Drawing::Point(213, 6);
+			this->groupBox8->Location = System::Drawing::Point(208, 9);
 			this->groupBox8->Name = L"groupBox8";
-			this->groupBox8->Size = System::Drawing::Size(201, 339);
+			this->groupBox8->Size = System::Drawing::Size(193, 339);
 			this->groupBox8->TabIndex = 1;
 			this->groupBox8->TabStop = false;
 			this->groupBox8->Text = L"Received packets";
 			// 
 			// newReceivedPacketFilterButton
 			// 
-			this->newReceivedPacketFilterButton->Location = System::Drawing::Point(116, 308);
+			this->newReceivedPacketFilterButton->Location = System::Drawing::Point(112, 308);
 			this->newReceivedPacketFilterButton->Name = L"newReceivedPacketFilterButton";
 			this->newReceivedPacketFilterButton->Size = System::Drawing::Size(75, 23);
 			this->newReceivedPacketFilterButton->TabIndex = 5;
@@ -576,7 +576,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			// 
 			this->removeReceivedPacketFilterButton->Location = System::Drawing::Point(6, 279);
 			this->removeReceivedPacketFilterButton->Name = L"removeReceivedPacketFilterButton";
-			this->removeReceivedPacketFilterButton->Size = System::Drawing::Size(185, 23);
+			this->removeReceivedPacketFilterButton->Size = System::Drawing::Size(181, 23);
 			this->removeReceivedPacketFilterButton->TabIndex = 2;
 			this->removeReceivedPacketFilterButton->Text = L"Remove selected filter";
 			this->removeReceivedPacketFilterButton->UseVisualStyleBackColor = true;
@@ -586,7 +586,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			// 
 			this->newReceivedPacketFilterTextBox->Location = System::Drawing::Point(6, 309);
 			this->newReceivedPacketFilterTextBox->Name = L"newReceivedPacketFilterTextBox";
-			this->newReceivedPacketFilterTextBox->Size = System::Drawing::Size(104, 20);
+			this->newReceivedPacketFilterTextBox->Size = System::Drawing::Size(100, 20);
 			this->newReceivedPacketFilterTextBox->TabIndex = 4;
 			// 
 			// filterReceivedPacketList
@@ -594,7 +594,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->filterReceivedPacketList->FormattingEnabled = true;
 			this->filterReceivedPacketList->Location = System::Drawing::Point(6, 19);
 			this->filterReceivedPacketList->Name = L"filterReceivedPacketList";
-			this->filterReceivedPacketList->Size = System::Drawing::Size(185, 251);
+			this->filterReceivedPacketList->Size = System::Drawing::Size(181, 251);
 			this->filterReceivedPacketList->TabIndex = 1;
 			// 
 			// groupBox7
@@ -603,16 +603,16 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->groupBox7->Controls->Add(this->newSentPacketFilterTextBox);
 			this->groupBox7->Controls->Add(this->removeSentPacketFilterButton);
 			this->groupBox7->Controls->Add(this->filterSentPacketList);
-			this->groupBox7->Location = System::Drawing::Point(7, 6);
+			this->groupBox7->Location = System::Drawing::Point(9, 9);
 			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(196, 339);
+			this->groupBox7->Size = System::Drawing::Size(193, 339);
 			this->groupBox7->TabIndex = 0;
 			this->groupBox7->TabStop = false;
 			this->groupBox7->Text = L"Sent packets";
 			// 
 			// newSentPacketFilterButton
 			// 
-			this->newSentPacketFilterButton->Location = System::Drawing::Point(115, 306);
+			this->newSentPacketFilterButton->Location = System::Drawing::Point(112, 306);
 			this->newSentPacketFilterButton->Name = L"newSentPacketFilterButton";
 			this->newSentPacketFilterButton->Size = System::Drawing::Size(75, 23);
 			this->newSentPacketFilterButton->TabIndex = 3;
@@ -624,14 +624,14 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			// 
 			this->newSentPacketFilterTextBox->Location = System::Drawing::Point(6, 308);
 			this->newSentPacketFilterTextBox->Name = L"newSentPacketFilterTextBox";
-			this->newSentPacketFilterTextBox->Size = System::Drawing::Size(103, 20);
+			this->newSentPacketFilterTextBox->Size = System::Drawing::Size(100, 20);
 			this->newSentPacketFilterTextBox->TabIndex = 2;
 			// 
 			// removeSentPacketFilterButton
 			// 
 			this->removeSentPacketFilterButton->Location = System::Drawing::Point(6, 279);
 			this->removeSentPacketFilterButton->Name = L"removeSentPacketFilterButton";
-			this->removeSentPacketFilterButton->Size = System::Drawing::Size(184, 23);
+			this->removeSentPacketFilterButton->Size = System::Drawing::Size(181, 23);
 			this->removeSentPacketFilterButton->TabIndex = 1;
 			this->removeSentPacketFilterButton->Text = L"Remove selected filter";
 			this->removeSentPacketFilterButton->UseVisualStyleBackColor = true;
@@ -642,7 +642,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->filterSentPacketList->FormattingEnabled = true;
 			this->filterSentPacketList->Location = System::Drawing::Point(6, 19);
 			this->filterSentPacketList->Name = L"filterSentPacketList";
-			this->filterSentPacketList->Size = System::Drawing::Size(184, 251);
+			this->filterSentPacketList->Size = System::Drawing::Size(181, 251);
 			this->filterSentPacketList->TabIndex = 0;
 			// 
 			// groupBox1
