@@ -16,7 +16,7 @@ public:
 	void send(const std::string& packet) const;
 	void receive(char* packet) const;
 	void receive(const std::string& packet) const;
-	void setOnPacket(PacketHandler* handler);
+	void setPacketHandler(PacketHandler* handler);
 
 
 private:

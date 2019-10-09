@@ -11,7 +11,7 @@ namespace devtale {
 		setup();
 	}
 
-	void Protocol::setOnPacket(PacketHandler* handler)
+	void Protocol::setPacketHandler(PacketHandler* handler)
 	{
 		this->handler_ = handler;
 	}
