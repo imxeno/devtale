@@ -8,9 +8,20 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 	while(en->MoveNext())
 	{
 		String^ filter = (String^)en->Current;
-		if (s->Contains(filter)) return;
+		if (s->Contains(filter))
+		{
+			if(form_->sentWhitelistRadio->Checked)
+			{
+				form_->packetLogTextBox->AppendText(s);
+			}
+			return;
+		}
 	}
-	form_->packetLogTextBox->AppendText(s);
+	
+	if (form_->sentBlacklistRadio->Checked)
+	{
+		form_->packetLogTextBox->AppendText(s);
+	}
 }
 
 void devtale::PacketHandler::onPacketReceive(std::string packet) const
@@ -21,7 +32,17 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 	while (en->MoveNext())
 	{
 		String^ filter = (String^)en->Current;
-		if (s->Contains(filter)) return;
+		if (s->Contains(filter))
+		{
+			if (form_->receivedWhitelistRadio->Checked)
+			{
+				form_->packetLogTextBox->AppendText(s);
+			}
+			return;
+		}
 	}
-	form_->packetLogTextBox->AppendText(s);
+	if (form_->receivedBlacklistRadio->Checked)
+	{
+		form_->packetLogTextBox->AppendText(s);
+	}
 }

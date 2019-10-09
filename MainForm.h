@@ -181,6 +181,10 @@ public: System::Windows::Forms::ListBox^ filterSentPacketList;
 
 private: System::Windows::Forms::Timer^ sendTimer;
 private: System::Windows::Forms::Timer^ receiveTimer;
+public: System::Windows::Forms::RadioButton^ receivedWhitelistRadio;
+public: System::Windows::Forms::RadioButton^ receivedBlacklistRadio;
+public: System::Windows::Forms::RadioButton^ sentWhitelistRadio;
+public: System::Windows::Forms::RadioButton^ sentBlacklistRadio;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -246,6 +250,10 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->receiveTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->sentBlacklistRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->sentWhitelistRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->receivedWhitelistRadio = (gcnew System::Windows::Forms::RadioButton());
+			this->receivedBlacklistRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabControl2->SuspendLayout();
@@ -551,7 +559,9 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			// 
 			// groupBox8
 			// 
+			this->groupBox8->Controls->Add(this->receivedWhitelistRadio);
 			this->groupBox8->Controls->Add(this->newReceivedPacketFilterButton);
+			this->groupBox8->Controls->Add(this->receivedBlacklistRadio);
 			this->groupBox8->Controls->Add(this->removeReceivedPacketFilterButton);
 			this->groupBox8->Controls->Add(this->newReceivedPacketFilterTextBox);
 			this->groupBox8->Controls->Add(this->filterReceivedPacketList);
@@ -594,11 +604,13 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->filterReceivedPacketList->FormattingEnabled = true;
 			this->filterReceivedPacketList->Location = System::Drawing::Point(6, 19);
 			this->filterReceivedPacketList->Name = L"filterReceivedPacketList";
-			this->filterReceivedPacketList->Size = System::Drawing::Size(181, 251);
+			this->filterReceivedPacketList->Size = System::Drawing::Size(181, 225);
 			this->filterReceivedPacketList->TabIndex = 1;
 			// 
 			// groupBox7
 			// 
+			this->groupBox7->Controls->Add(this->sentWhitelistRadio);
+			this->groupBox7->Controls->Add(this->sentBlacklistRadio);
 			this->groupBox7->Controls->Add(this->newSentPacketFilterButton);
 			this->groupBox7->Controls->Add(this->newSentPacketFilterTextBox);
 			this->groupBox7->Controls->Add(this->removeSentPacketFilterButton);
@@ -642,7 +654,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->filterSentPacketList->FormattingEnabled = true;
 			this->filterSentPacketList->Location = System::Drawing::Point(6, 19);
 			this->filterSentPacketList->Name = L"filterSentPacketList";
-			this->filterSentPacketList->Size = System::Drawing::Size(181, 251);
+			this->filterSentPacketList->Size = System::Drawing::Size(181, 225);
 			this->filterSentPacketList->TabIndex = 0;
 			// 
 			// groupBox1
@@ -750,6 +762,50 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			// receiveTimer
 			// 
 			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
+			// 
+			// sentBlacklistRadio
+			// 
+			this->sentBlacklistRadio->AutoSize = true;
+			this->sentBlacklistRadio->Checked = true;
+			this->sentBlacklistRadio->Location = System::Drawing::Point(52, 256);
+			this->sentBlacklistRadio->Name = L"sentBlacklistRadio";
+			this->sentBlacklistRadio->Size = System::Drawing::Size(64, 17);
+			this->sentBlacklistRadio->TabIndex = 4;
+			this->sentBlacklistRadio->TabStop = true;
+			this->sentBlacklistRadio->Text = L"Blacklist";
+			this->sentBlacklistRadio->UseVisualStyleBackColor = true;
+			// 
+			// sentWhitelistRadio
+			// 
+			this->sentWhitelistRadio->AutoSize = true;
+			this->sentWhitelistRadio->Location = System::Drawing::Point(122, 256);
+			this->sentWhitelistRadio->Name = L"sentWhitelistRadio";
+			this->sentWhitelistRadio->Size = System::Drawing::Size(65, 17);
+			this->sentWhitelistRadio->TabIndex = 5;
+			this->sentWhitelistRadio->Text = L"Whitelist";
+			this->sentWhitelistRadio->UseVisualStyleBackColor = true;
+			// 
+			// receivedWhitelistRadio
+			// 
+			this->receivedWhitelistRadio->AutoSize = true;
+			this->receivedWhitelistRadio->Location = System::Drawing::Point(122, 256);
+			this->receivedWhitelistRadio->Name = L"receivedWhitelistRadio";
+			this->receivedWhitelistRadio->Size = System::Drawing::Size(65, 17);
+			this->receivedWhitelistRadio->TabIndex = 7;
+			this->receivedWhitelistRadio->Text = L"Whitelist";
+			this->receivedWhitelistRadio->UseVisualStyleBackColor = true;
+			// 
+			// receivedBlacklistRadio
+			// 
+			this->receivedBlacklistRadio->AutoSize = true;
+			this->receivedBlacklistRadio->Checked = true;
+			this->receivedBlacklistRadio->Location = System::Drawing::Point(52, 256);
+			this->receivedBlacklistRadio->Name = L"receivedBlacklistRadio";
+			this->receivedBlacklistRadio->Size = System::Drawing::Size(64, 17);
+			this->receivedBlacklistRadio->TabIndex = 6;
+			this->receivedBlacklistRadio->TabStop = true;
+			this->receivedBlacklistRadio->Text = L"Blacklist";
+			this->receivedBlacklistRadio->UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
