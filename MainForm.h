@@ -454,7 +454,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->receivePacketIntervalTextBox->Name = L"receivePacketIntervalTextBox";
 			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->receivePacketIntervalTextBox->TabIndex = 10;
-			this->receivePacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
+			this->receivePacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->receivePacketIntervalTextBox->ValueChanged += gcnew System::EventHandler(this, &MainForm::ReceivePacketIntervalTextBox_ValueChanged);
 			// 
 			// receivePacketCountTextBox
