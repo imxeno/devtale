@@ -1,5 +1,6 @@
 #include "Memory.h"
 #pragma managed(push, off)
+#pragma optimize("", off)
 bool Memory::detour(BYTE* old_func, BYTE* new_func, const DWORD len)
 {
 	std::cout << std::hex << "Detour> detouring function at 0x" << reinterpret_cast<DWORD>(old_func) << " to 0x" << reinterpret_cast<DWORD>(new_func) << " overwriting 0x" << len << " bytes" << std::dec << std::endl;
@@ -80,4 +81,5 @@ DWORD Memory::findPattern(const BYTE* b_mask, const char* sz_mask)
 	return 0;
 }
 
+#pragma optimize("", on)
 #pragma managed(pop)

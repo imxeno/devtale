@@ -22,6 +22,7 @@ namespace devtale {
 		if (p == nullptr) p = new Protocol();
 		return p;
 	}
+#pragma optimize("", off)
 
 	void Protocol::setup()
 	{
@@ -156,6 +157,8 @@ namespace devtale {
 			popad
 		}
 	}
+#pragma optimize("", on)
+	
 }
 
 #pragma managed(pop)
