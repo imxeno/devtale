@@ -12,7 +12,7 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 		{
 			if(form_->sentWhitelistRadio->Checked)
 			{
-				form_->packetLogTextBox->AppendText(s);
+				appendLog(s, false);
 			}
 			return;
 		}
@@ -20,7 +20,7 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 	
 	if (form_->sentBlacklistRadio->Checked)
 	{
-		form_->packetLogTextBox->AppendText(s);
+		appendLog(s, false);
 	}
 }
 
@@ -36,13 +36,28 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 		{
 			if (form_->receivedWhitelistRadio->Checked)
 			{
-				form_->packetLogTextBox->AppendText(s);
+				appendLog(s, true);
 			}
 			return;
 		}
 	}
 	if (form_->receivedBlacklistRadio->Checked)
 	{
-		form_->packetLogTextBox->AppendText(s);
+		appendLog(s, true);
 	}
+}
+
+void devtale::PacketHandler::appendLog(System::String^ packet, bool is_received) const
+{
+	if(form_->packetLogPrependDirectionCheckBox->Checked)
+	{
+		packet = (is_received ? "[R] " : "[S] ") + packet;
+	}
+
+	if(form_->packetLogPrependTimeCheckBox->Checked)
+	{
+		packet = "[" + System::DateTime::Now.ToLongTimeString() + "] " + packet;
+	}
+	
+	form_->packetLogTextBox->AppendText(packet);
 }

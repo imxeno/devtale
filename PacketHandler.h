@@ -8,8 +8,6 @@ namespace devtale {
 
 class PacketHandler
 {
-private:
-	gcroot<MainForm^> form_;
 public:
 	PacketHandler(MainForm^ form)
 	{
@@ -19,6 +17,9 @@ public:
 	void onPacketSend(std::string packet) const;
 	void onPacketReceive(std::string packet) const;
 	
+private:
+	gcroot<MainForm^> form_;
+	void appendLog(System::String^ packet, bool is_received) const;
 };
 
 }
