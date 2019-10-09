@@ -557,6 +557,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->newReceivedPacketFilterButton->TabIndex = 5;
 			this->newReceivedPacketFilterButton->Text = L"Add";
 			this->newReceivedPacketFilterButton->UseVisualStyleBackColor = true;
+			this->newReceivedPacketFilterButton->Click += gcnew System::EventHandler(this, &MainForm::NewReceivedPacketFilterButton_Click);
 			// 
 			// removeReceivedPacketFilterButton
 			// 
@@ -566,6 +567,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->removeReceivedPacketFilterButton->TabIndex = 2;
 			this->removeReceivedPacketFilterButton->Text = L"Remove selected filter";
 			this->removeReceivedPacketFilterButton->UseVisualStyleBackColor = true;
+			this->removeReceivedPacketFilterButton->Click += gcnew System::EventHandler(this, &MainForm::RemoveReceivedPacketFilterButton_Click);
 			// 
 			// newReceivedPacketFilterTextBox
 			// 
@@ -603,6 +605,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->newSentPacketFilterButton->TabIndex = 3;
 			this->newSentPacketFilterButton->Text = L"Add";
 			this->newSentPacketFilterButton->UseVisualStyleBackColor = true;
+			this->newSentPacketFilterButton->Click += gcnew System::EventHandler(this, &MainForm::NewSentPacketFilterButton_Click);
 			// 
 			// newSentPacketFilterTextBox
 			// 
@@ -619,6 +622,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->removeSentPacketFilterButton->TabIndex = 1;
 			this->removeSentPacketFilterButton->Text = L"Remove selected filter";
 			this->removeSentPacketFilterButton->UseVisualStyleBackColor = true;
+			this->removeSentPacketFilterButton->Click += gcnew System::EventHandler(this, &MainForm::RemoveSentPacketFilterButton_Click);
 			// 
 			// filterSentPacketList
 			// 
@@ -825,6 +829,32 @@ private: System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, 
 	{
 		devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
 	}
+}
+private: System::Void NewSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if(newSentPacketFilterTextBox->Text == String::Empty)
+	{
+		System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
+		return;
+	}
+	filterSentPacketList->Items->Add(newSentPacketFilterTextBox->Text);
+	newReceivedPacketFilterTextBox->Text = String::Empty;
+}
+private: System::Void NewReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (newReceivedPacketFilterTextBox->Text == String::Empty)
+	{
+		System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
+		return;
+	}
+	filterReceivedPacketList->Items->Add(newReceivedPacketFilterTextBox->Text);
+	newReceivedPacketFilterTextBox->Text = String::Empty;
+}
+private: System::Void RemoveSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (filterSentPacketList->SelectedIndex == -1) return;
+	filterSentPacketList->Items->RemoveAt(filterSentPacketList->SelectedIndex);
+}
+private: System::Void RemoveReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (filterReceivedPacketList->SelectedIndex == -1) return;
+	filterReceivedPacketList->Items->RemoveAt(filterReceivedPacketList->SelectedIndex);
 }
 };
 }
