@@ -796,7 +796,13 @@ private: System::ComponentModel::IContainer^ components;
 		devtale::Protocol::get()->send(marshal_as<std::string>(singlePacketSendTextBox->Text));
 	}
 	private: System::Void SinglePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
 		devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
+		}
+		catch (Runtime::InteropServices::SEHException^)
+		{
+			// ignore Access Violations
+		}
 	}
 private: System::Void MultiplePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (sendPacketCountRadio->Checked) {
@@ -839,7 +845,12 @@ private: System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, 
 			auto en = multiplePacketReceiveTextBox->Lines->GetEnumerator();
 			while (en->MoveNext())
 			{
-				devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
+				try {
+					devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
+				} catch (Runtime::InteropServices::SEHException^)
+				{
+					// ignore Access Violations
+				}
 			}
 		}
 private: System::Void NewSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
