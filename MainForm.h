@@ -98,8 +98,10 @@ namespace devtale
 
 	private:
 		System::Windows::Forms::Button^ multiplePacketSendButton;
+	private: System::Windows::Forms::TextBox^ multiplePacketSendTextBox;
+
 	private:
-		System::Windows::Forms::TextBox^ multiplePacketSendText;
+
 	private:
 		System::Windows::Forms::GroupBox^ groupBox3;
 	private:
@@ -201,7 +203,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->sendPacketInfiniteRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->sendPacketCountRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->multiplePacketSendButton = (gcnew System::Windows::Forms::Button());
-			this->multiplePacketSendText = (gcnew System::Windows::Forms::TextBox());
+			this->multiplePacketSendTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->singlePacketSendButton = (gcnew System::Windows::Forms::Button());
 			this->singlePacketSendTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -313,7 +315,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->groupBox4->Controls->Add(this->sendPacketInfiniteRadio);
 			this->groupBox4->Controls->Add(this->sendPacketCountRadio);
 			this->groupBox4->Controls->Add(this->multiplePacketSendButton);
-			this->groupBox4->Controls->Add(this->multiplePacketSendText);
+			this->groupBox4->Controls->Add(this->multiplePacketSendTextBox);
 			this->groupBox4->Location = System::Drawing::Point(9, 95);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Padding = System::Windows::Forms::Padding(6);
@@ -328,7 +330,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->sendPacketIntervalTextBox->Name = L"sendPacketIntervalTextBox";
 			this->sendPacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->sendPacketIntervalTextBox->TabIndex = 5;
-			this->sendPacketIntervalTextBox->Text = L"1";
+			this->sendPacketIntervalTextBox->Text = L"100";
 			// 
 			// sendPacketCountTextBox
 			// 
@@ -345,13 +347,13 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->sendPacketInfiniteRadio->Name = L"sendPacketInfiniteRadio";
 			this->sendPacketInfiniteRadio->Size = System::Drawing::Size(164, 17);
 			this->sendPacketInfiniteRadio->TabIndex = 3;
-			this->sendPacketInfiniteRadio->TabStop = true;
 			this->sendPacketInfiniteRadio->Text = L"Send every                        ms";
 			this->sendPacketInfiniteRadio->UseVisualStyleBackColor = true;
 			// 
 			// sendPacketCountRadio
 			// 
 			this->sendPacketCountRadio->AutoSize = true;
+			this->sendPacketCountRadio->Checked = true;
 			this->sendPacketCountRadio->Location = System::Drawing::Point(9, 188);
 			this->sendPacketCountRadio->Name = L"sendPacketCountRadio";
 			this->sendPacketCountRadio->Size = System::Drawing::Size(131, 17);
@@ -368,15 +370,16 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->multiplePacketSendButton->TabIndex = 1;
 			this->multiplePacketSendButton->Text = L"Send";
 			this->multiplePacketSendButton->UseVisualStyleBackColor = true;
+			this->multiplePacketSendButton->Click += gcnew System::EventHandler(this, &MainForm::MultiplePacketSendButton_Click);
 			// 
-			// multiplePacketSendText
+			// multiplePacketSendTextBox
 			// 
-			this->multiplePacketSendText->Location = System::Drawing::Point(9, 22);
-			this->multiplePacketSendText->Multiline = true;
-			this->multiplePacketSendText->Name = L"multiplePacketSendText";
-			this->multiplePacketSendText->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->multiplePacketSendText->Size = System::Drawing::Size(374, 148);
-			this->multiplePacketSendText->TabIndex = 0;
+			this->multiplePacketSendTextBox->Location = System::Drawing::Point(9, 22);
+			this->multiplePacketSendTextBox->Multiline = true;
+			this->multiplePacketSendTextBox->Name = L"multiplePacketSendTextBox";
+			this->multiplePacketSendTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Both;
+			this->multiplePacketSendTextBox->Size = System::Drawing::Size(374, 148);
+			this->multiplePacketSendTextBox->TabIndex = 0;
 			// 
 			// groupBox3
 			// 
@@ -441,7 +444,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->receivePacketIntervalTextBox->Name = L"receivePacketIntervalTextBox";
 			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->receivePacketIntervalTextBox->TabIndex = 10;
-			this->receivePacketIntervalTextBox->Text = L"1";
+			this->receivePacketIntervalTextBox->Text = L"100";
 			// 
 			// receivePacketCountTextBox
 			// 
@@ -458,13 +461,13 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->receivePacketIntervalRadio->Name = L"receivePacketIntervalRadio";
 			this->receivePacketIntervalRadio->Size = System::Drawing::Size(179, 17);
 			this->receivePacketIntervalRadio->TabIndex = 8;
-			this->receivePacketIntervalRadio->TabStop = true;
 			this->receivePacketIntervalRadio->Text = L"Receive every                        ms";
 			this->receivePacketIntervalRadio->UseVisualStyleBackColor = true;
 			// 
 			// receivePacketCountRadio
 			// 
 			this->receivePacketCountRadio->AutoSize = true;
+			this->receivePacketCountRadio->Checked = true;
 			this->receivePacketCountRadio->Location = System::Drawing::Point(9, 188);
 			this->receivePacketCountRadio->Name = L"receivePacketCountRadio";
 			this->receivePacketCountRadio->Size = System::Drawing::Size(146, 17);
@@ -490,6 +493,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->multiplePacketReceiveButton->TabIndex = 1;
 			this->multiplePacketReceiveButton->Text = L"Receive";
 			this->multiplePacketReceiveButton->UseVisualStyleBackColor = true;
+			this->multiplePacketReceiveButton->Click += gcnew System::EventHandler(this, &MainForm::MultiplePacketReceiveButton_Click);
 			// 
 			// groupBox6
 			// 
@@ -808,5 +812,19 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 	private: System::Void SinglePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
 	}
+private: System::Void MultiplePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	auto en = multiplePacketSendTextBox->Lines->GetEnumerator();
+	while(en->MoveNext())
+	{
+		devtale::Protocol::get()->send(marshal_as<std::string>((System::String^)en->Current));
+	}
+}
+private: System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	auto en = multiplePacketReceiveTextBox->Lines->GetEnumerator();
+	while (en->MoveNext())
+	{
+		devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
+	}
+}
 };
 }
