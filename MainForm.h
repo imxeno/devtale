@@ -55,11 +55,12 @@ namespace devtale
 		System::Windows::Forms::TabPage^ tabPage2;
 	private:
 		System::Windows::Forms::GroupBox^ groupBox2;
-	private:
+	public:
 		System::Windows::Forms::TextBox^ packetLogTextBox;
-	private:
-		System::Windows::Forms::CheckBox^ logSentPacketCheckBox;
-	private:
+	public: System::Windows::Forms::CheckBox^ logSentPacketsCheckBox;
+	public:
+
+	public:
 		System::Windows::Forms::CheckBox^ logReceivePacketsCheckBox;
 	private:
 		System::Windows::Forms::CheckBox^ enableReceivedPacketFilterCheckBox;
@@ -226,7 +227,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->enableReceivedPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->enableSentPacketFilterCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->logSentPacketCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->logSentPacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->logReceivePacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
@@ -640,7 +641,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			// 
 			this->groupBox2->Controls->Add(this->enableReceivedPacketFilterCheckBox);
 			this->groupBox2->Controls->Add(this->enableSentPacketFilterCheckBox);
-			this->groupBox2->Controls->Add(this->logSentPacketCheckBox);
+			this->groupBox2->Controls->Add(this->logSentPacketsCheckBox);
 			this->groupBox2->Controls->Add(this->logReceivePacketsCheckBox);
 			this->groupBox2->Location = System::Drawing::Point(370, 6);
 			this->groupBox2->Name = L"groupBox2";
@@ -670,19 +671,23 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->enableSentPacketFilterCheckBox->Text = L"w\\ filter";
 			this->enableSentPacketFilterCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// logSentPacketCheckBox
+			// logSentPacketsCheckBox
 			// 
-			this->logSentPacketCheckBox->AutoSize = true;
-			this->logSentPacketCheckBox->Location = System::Drawing::Point(11, 24);
-			this->logSentPacketCheckBox->Name = L"logSentPacketCheckBox";
-			this->logSentPacketCheckBox->Size = System::Drawing::Size(89, 17);
-			this->logSentPacketCheckBox->TabIndex = 1;
-			this->logSentPacketCheckBox->Text = L"Sent packets";
-			this->logSentPacketCheckBox->UseVisualStyleBackColor = true;
+			this->logSentPacketsCheckBox->AutoSize = true;
+			this->logSentPacketsCheckBox->Checked = true;
+			this->logSentPacketsCheckBox->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->logSentPacketsCheckBox->Location = System::Drawing::Point(11, 24);
+			this->logSentPacketsCheckBox->Name = L"logSentPacketsCheckBox";
+			this->logSentPacketsCheckBox->Size = System::Drawing::Size(89, 17);
+			this->logSentPacketsCheckBox->TabIndex = 1;
+			this->logSentPacketsCheckBox->Text = L"Sent packets";
+			this->logSentPacketsCheckBox->UseVisualStyleBackColor = true;
 			// 
 			// logReceivePacketsCheckBox
 			// 
 			this->logReceivePacketsCheckBox->AutoSize = true;
+			this->logReceivePacketsCheckBox->Checked = true;
+			this->logReceivePacketsCheckBox->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->logReceivePacketsCheckBox->Location = System::Drawing::Point(11, 47);
 			this->logReceivePacketsCheckBox->Name = L"logReceivePacketsCheckBox";
 			this->logReceivePacketsCheckBox->Size = System::Drawing::Size(113, 17);

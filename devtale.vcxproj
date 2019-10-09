@@ -134,11 +134,19 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="NosString.cpp" />
+    <ClCompile Include="PacketHandler.cpp" />
+    <ClCompile Include="Protocol.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="NosString.h" />
+    <ClInclude Include="PacketHandler.h" />
+    <ClInclude Include="Protocol.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
