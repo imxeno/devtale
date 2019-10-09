@@ -1,4 +1,7 @@
 #pragma once
+#include "Protocol.h"
+
+#include <msclr\marshal_cppstd.h>
 
 namespace devtale
 {
@@ -8,6 +11,8 @@ namespace devtale
 	using namespace Windows::Forms;
 	using namespace Data;
 	using namespace Drawing;
+
+	using namespace msclr::interop;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -393,6 +398,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->singlePacketSendButton->TabIndex = 1;
 			this->singlePacketSendButton->Text = L"Send";
 			this->singlePacketSendButton->UseVisualStyleBackColor = true;
+			this->singlePacketSendButton->Click += gcnew System::EventHandler(this, &MainForm::SinglePacketSendButton_Click);
 			// 
 			// singlePacketSendTextBox
 			// 
@@ -505,6 +511,7 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 			this->singlePacketReceiveButton->TabIndex = 1;
 			this->singlePacketReceiveButton->Text = L"Receive";
 			this->singlePacketReceiveButton->UseVisualStyleBackColor = true;
+			this->singlePacketReceiveButton->Click += gcnew System::EventHandler(this, &MainForm::SinglePacketReceiveButton_Click);
 			// 
 			// singlePacketReceiveTextBox
 			// 
@@ -795,5 +802,11 @@ private: System::Windows::Forms::TextBox^ luaTextBox;
 
 		}
 #pragma endregion
-	};
+	private: System::Void SinglePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		devtale::Protocol::get()->send(marshal_as<std::string>(singlePacketSendTextBox->Text));
+	}
+	private: System::Void SinglePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
+	}
+};
 }

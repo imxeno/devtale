@@ -2,6 +2,7 @@
 
 #include "NosString.h"
 #include "Memory.h"
+#include "PacketHandler.h"
 
 #pragma managed(push, off)
 namespace devtale {

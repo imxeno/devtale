@@ -8,7 +8,7 @@ void WINAPI DllThread()
 {
 	AllocConsole();
 	devtale::MainForm^ form = gcnew devtale::MainForm();
-	devtale::Protocol::get()->setOnPacket(new devtale::PacketHandler(form));
+	devtale::Protocol::get()->setPacketHandler(new devtale::PacketHandler(form));
 	System::Windows::Forms::Application::Run(form);
 }
 
