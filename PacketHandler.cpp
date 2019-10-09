@@ -2,16 +2,26 @@
 
 void devtale::PacketHandler::onPacketSend(std::string packet)
 {
-	packet += "\r\n";
-	if (form_->logSentPacketsCheckBox->Checked) {
-		form_->packetLogTextBox->AppendText(gcnew String(packet.c_str()));
+	if (!form_->logSentPacketsCheckBox->Checked) return;
+	String^ s = gcnew String(packet.c_str()) + "\r\n";
+	auto en = form_->filterSentPacketList->Items->GetEnumerator();
+	while(en->MoveNext())
+	{
+		String^ filter = (String^)en->Current;
+		if (s->Contains(filter)) return;
 	}
+	form_->packetLogTextBox->AppendText(s);
 }
 
 void devtale::PacketHandler::onPacketReceive(std::string packet)
 {
-	packet += "\r\n";
-	if (form_->logReceivePacketsCheckBox->Checked) {
-		form_->packetLogTextBox->AppendText(gcnew String(packet.c_str()));
+	if (!form_->logReceivedPacketsCheckBox->Checked) return;
+	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
+	auto en = form_->filterReceivedPacketList->Items->GetEnumerator();
+	while (en->MoveNext())
+	{
+		String^ filter = (String^)en->Current;
+		if (s->Contains(filter)) return;
 	}
+	form_->packetLogTextBox->AppendText(s);
 }
