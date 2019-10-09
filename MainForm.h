@@ -344,7 +344,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->sendPacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->sendPacketIntervalTextBox->TabIndex = 5;
 			this->sendPacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
-			this->sendPacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::SendPacketIntervalTextBox_TextChanged);
+			this->sendPacketIntervalTextBox->ValueChanged += gcnew System::EventHandler(this, &MainForm::SendPacketIntervalTextBox_ValueChanged);
 			// 
 			// sendPacketCountTextBox
 			// 
@@ -462,7 +462,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->receivePacketIntervalTextBox->Size = System::Drawing::Size(58, 20);
 			this->receivePacketIntervalTextBox->TabIndex = 10;
 			this->receivePacketIntervalTextBox->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-			this->receivePacketIntervalTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::ReceivePacketIntervalTextBox_TextChanged);
+			this->receivePacketIntervalTextBox->ValueChanged += gcnew System::EventHandler(this, &MainForm::ReceivePacketIntervalTextBox_ValueChanged);
 			// 
 			// receivePacketCountTextBox
 			// 
@@ -923,12 +923,11 @@ private: System::Void SendTimer_Tick(System::Object^ sender, System::EventArgs^ 
 private: System::Void ReceiveTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 	MultipleReceivePackets();
 }
-private: System::Void SendPacketIntervalTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	sendTimer->Interval = System::Convert::ToInt32(sendPacketIntervalTextBox->Text);
+private: System::Void SendPacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	sendTimer->Interval = System::Decimal::ToInt32(sendPacketIntervalTextBox->Value);
 }
-private: System::Void ReceivePacketIntervalTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	receiveTimer->Interval = System::Convert::ToInt32(receivePacketIntervalTextBox->Text);
+private: System::Void ReceivePacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	receiveTimer->Interval = System::Decimal::ToInt32(receivePacketIntervalTextBox->Value);
 }
-
 };
 }
