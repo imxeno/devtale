@@ -118,7 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Copyright © 2019 Piotr "Xeno" Adamczyk
+    <value>DevTale v1.0
+
+Copyright © 2019 Piotr "Xeno" Adamczyk &lt;xeno@xeno.yt&gt;
 For debugging and researching purposes only.
 
 Here's to the crazy ones. 
@@ -131,7 +133,10 @@ About the only thing you can't do is ignore them.
 Because they change things. They push the human race forward.
 And while some may see them as the crazy ones, we see genius.
 Because the people who are crazy enough to think they can change the world, are the ones who do.
--- Steve Jobs</value>
+-- Steve Jobs
+
+Thanks to everyone who gave me a helping hand during my journey.
+I'm not done yet.</value>
   </data>
   <metadata name="sendTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

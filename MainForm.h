@@ -739,7 +739,7 @@ private: System::Windows::Forms::Timer^ receiveTimer;
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(9, 10);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(483, 182);
+			this->label1->Size = System::Drawing::Size(483, 247);
 			this->label1->TabIndex = 0;
 			this->label1->Text = resources->GetString(L"label1.Text");
 			// 
