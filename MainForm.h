@@ -862,6 +862,7 @@ public:
 			this->Name = L"MainForm";
 			this->Padding = System::Windows::Forms::Padding(3);
 			this->Text = L"DevTale";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->groupBox9->ResumeLayout(false);
@@ -994,6 +995,14 @@ private: System::Void SendPacketIntervalTextBox_ValueChanged(System::Object^ sen
 }
 private: System::Void ReceivePacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	receiveTimer->Interval = System::Decimal::ToInt32(receivePacketIntervalTextBox->Value);
+}
+private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+
+	if(e->CloseReason == CloseReason::UserClosing)
+	{
+		e->Cancel = true;
+		MessageBox::Show("To close this window just exit the game.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 }
 };
 }
