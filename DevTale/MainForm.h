@@ -190,6 +190,8 @@ public: System::Windows::Forms::CheckBox^ packetLogPrependTimeCheckBox;
 private:
 
 public: System::Windows::Forms::CheckBox^ packetLogPrependDirectionCheckBox;
+private: System::Windows::Forms::TabPage^ tabPage6;
+public:
 public:
 
 
@@ -265,6 +267,7 @@ public:
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->receiveTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->groupBox9->SuspendLayout();
@@ -290,6 +293,7 @@ public:
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
+			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Location = System::Drawing::Point(6, 6);
 			this->tabControl1->Name = L"tabControl1";
@@ -850,6 +854,15 @@ public:
 			// receiveTimer
 			// 
 			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
+			// 
+			// tabPage6
+			// 
+			this->tabPage6->Location = System::Drawing::Point(4, 22);
+			this->tabPage6->Name = L"tabPage6";
+			this->tabPage6->Size = System::Drawing::Size(794, 473);
+			this->tabPage6->TabIndex = 2;
+			this->tabPage6->Text = L"Lua Editor";
+			this->tabPage6->UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
