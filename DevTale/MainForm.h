@@ -844,10 +844,12 @@ public:
 			// 
 			// sendTimer
 			// 
+			this->sendTimer->Interval = 1000;
 			this->sendTimer->Tick += gcnew System::EventHandler(this, &MainForm::SendTimer_Tick);
 			// 
 			// receiveTimer
 			// 
+			this->receiveTimer->Interval = 1000;
 			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
 			// 
 			// MainForm
