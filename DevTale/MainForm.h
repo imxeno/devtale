@@ -68,10 +68,7 @@ namespace devtale
 	public:
 
 	public:
-
-	private:
 		System::Windows::Forms::CheckBox^ enableReceivedPacketFilterCheckBox;
-	private:
 		System::Windows::Forms::CheckBox^ enableSentPacketFilterCheckBox;
 	private:
 		System::Windows::Forms::Label^ label1;

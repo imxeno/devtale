@@ -4,6 +4,10 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
 	if (!form_->logSentPacketsCheckBox->Checked) return;
 	String^ s = gcnew String(packet.c_str()) + "\r\n";
+	if (!form_->enableSentPacketFilterCheckBox) {
+		appendLog(s, false);
+		return;
+	}
 	auto en = form_->filterSentPacketList->Items->GetEnumerator();
 	while(en->MoveNext())
 	{
@@ -28,6 +32,10 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 {
 	if (!form_->logReceivedPacketsCheckBox->Checked) return;
 	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
+	if (!form_->enableReceivedPacketFilterCheckBox) {
+		appendLog(s, true);
+		return;
+	}
 	auto en = form_->filterReceivedPacketList->Items->GetEnumerator();
 	while (en->MoveNext())
 	{

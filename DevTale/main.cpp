@@ -32,6 +32,9 @@ bool WINAPI DllMain(_In_ HINSTANCE instance, _In_ DWORD call_reason, _In_ LPVOID
 	switch (call_reason)
 	{
 	case DLL_PROCESS_ATTACH:
+#ifdef _DEBUG
+		CreateDebugWindow();
+#endif
 		CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(Setup), nullptr, 0, nullptr);
 		break;
 	case DLL_THREAD_ATTACH:
