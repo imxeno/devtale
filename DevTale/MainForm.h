@@ -187,6 +187,8 @@ public: System::Windows::Forms::CheckBox^ packetLogPrependTimeCheckBox;
 private:
 
 public: System::Windows::Forms::CheckBox^ packetLogPrependDirectionCheckBox;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
+public:
 
 public:
 public:
@@ -264,6 +266,7 @@ public:
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->receiveTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->groupBox9->SuspendLayout();
@@ -284,6 +287,7 @@ public:
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -824,6 +828,7 @@ public:
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->pictureBox1);
 			this->tabPage2->Controls->Add(this->label1);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
@@ -836,7 +841,7 @@ public:
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(9, 10);
+			this->label1->Location = System::Drawing::Point(9, 6);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(483, 247);
 			this->label1->TabIndex = 0;
@@ -851,6 +856,16 @@ public:
 			// 
 			this->receiveTimer->Interval = 1000;
 			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(664, 345);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(121, 123);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MainForm
 			// 
@@ -894,6 +909,7 @@ public:
 			this->groupBox2->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
