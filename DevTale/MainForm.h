@@ -19,6 +19,12 @@
 
 #include <msclr/marshal_cppstd.h>
 
+// Disclaimer:
+// 
+// This file may (and surely will) look bad, but changes to it
+// forced Visual Studio's form designer to go crazy so I am
+// forced to leave it like this. It's not like I'm happy with it.
+
 // ReSharper disable all
 // @formatter:off
 namespace devtale
