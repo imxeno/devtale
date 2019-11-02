@@ -17,9 +17,10 @@
 #pragma once
 #include "Protocol.h"
 
-#include <msclr\marshal_cppstd.h>
+#include <msclr/marshal_cppstd.h>
 
 // ReSharper disable all
+// @formatter:off
 namespace devtale
 {
 	using namespace System;
@@ -1040,4 +1041,5 @@ private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windo
 };
 }
 
+// @formatter:on
 // ReSharper restore all
