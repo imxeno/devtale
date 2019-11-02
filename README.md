@@ -20,4 +20,4 @@ Come on, the software is open source, go and check it yourself.
 
 Copyright &copy; 2019 Piotr "Xeno" Adamczyk
 
-Code is under the [GNU GPLv3 license.](/LICENSE)
+Code is under the [GNU GPLv3 license](/LICENSE) (tl;dr - if you release a modified version of DevTale, you need to disclose the source under the same license).
