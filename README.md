@@ -3,7 +3,7 @@
 </div>
 
 # DevTale
-Essentially... it's just a basic old-school packet logger for NosTale (a really old and broken mmorpg game), with ambitions to become something more. Although it may resemble old Elektrochemie's work, it's been written by me from scratch.
+Essentially... it's just a basic old-school packet logger for NosTale (a really old and broken mmorpg game), with ambitions to become something more. Although it may resemble old Elektrochemie's work, it's been written by me from scratch. *Ok, fine, I recycled some code from my old projects, so let's say almost from scratch.*
 
 <div align="center">
   <img src="/.github/mainwindow.jpg?raw=true" alt="main window of devtale" title="Main window of DevTale" />
@@ -11,7 +11,7 @@ Essentially... it's just a basic old-school packet logger for NosTale (a really 
 
 # Download
 
-You can find the latest .dll release [here.](https://github.com/imxeno/devtale/releases/latest) If you are unsure which file to choose, grab the one named "DevTale-Release.dll".
+You can find the latest .dll release [here.](https://github.com/imxeno/devtale/releases/latest) If you are unsure which file to choose, grab the one named **DevTale-Release.dll.**
 
 ## Asking about a VirusTotal link?
 Come on, the software is open source, go and check it yourself.
@@ -20,4 +20,4 @@ Come on, the software is open source, go and check it yourself.
 
 Copyright &copy; 2019 Piotr "Xeno" Adamczyk
 
-Code is under the [GNU GPLv3 license.]("/LICENSE")
+Code is under the [GNU GPLv3 license.](/LICENSE)
