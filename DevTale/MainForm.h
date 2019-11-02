@@ -263,10 +263,10 @@ public:
 			this->logSentPacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->logReceivedPacketsCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->sendTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->receiveTimer = (gcnew System::Windows::Forms::Timer(this->components));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->groupBox9->SuspendLayout();
@@ -838,10 +838,20 @@ public:
 			this->tabPage2->Text = L"About";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(664, 345);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(121, 123);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(9, 6);
+			this->label1->Location = System::Drawing::Point(9, 11);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(483, 247);
 			this->label1->TabIndex = 0;
@@ -856,16 +866,6 @@ public:
 			// 
 			this->receiveTimer->Interval = 1000;
 			this->receiveTimer->Tick += gcnew System::EventHandler(this, &MainForm::ReceiveTimer_Tick);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(664, 345);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(121, 123);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
 			// 
 			// MainForm
 			// 
