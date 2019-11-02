@@ -28,8 +28,11 @@ void WINAPI DllThread()
 }
 
 #pragma managed(push, off)
-void CreateDebugWindow() {
-	FILE* n_in; FILE* n_out; FILE* n_err;
+void CreateDebugWindow()
+{
+	FILE* n_in;
+	FILE* n_out;
+	FILE* n_err;
 	AllocConsole();
 	freopen_s(&n_in, "CONIN$", "r", stdin);
 	freopen_s(&n_out, "CONOUT$", "w", stdout);

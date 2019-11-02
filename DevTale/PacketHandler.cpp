@@ -20,24 +20,25 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
 	if (!form_->logSentPacketsCheckBox->Checked) return;
 	String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableSentPacketFilterCheckBox) {
+	if (!form_->enableSentPacketFilterCheckBox)
+	{
 		appendLog(s, false);
 		return;
 	}
 	auto en = form_->filterSentPacketList->Items->GetEnumerator();
-	while(en->MoveNext())
+	while (en->MoveNext())
 	{
 		String^ filter = (String^)en->Current;
 		if (s->Contains(filter))
 		{
-			if(form_->sentWhitelistRadio->Checked)
+			if (form_->sentWhitelistRadio->Checked)
 			{
 				appendLog(s, false);
 			}
 			return;
 		}
 	}
-	
+
 	if (form_->sentBlacklistRadio->Checked)
 	{
 		appendLog(s, false);
@@ -48,7 +49,8 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 {
 	if (!form_->logReceivedPacketsCheckBox->Checked) return;
 	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableReceivedPacketFilterCheckBox) {
+	if (!form_->enableReceivedPacketFilterCheckBox)
+	{
 		appendLog(s, true);
 		return;
 	}
@@ -73,15 +75,15 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 
 void devtale::PacketHandler::appendLog(System::String^ packet, bool is_received) const
 {
-	if(form_->packetLogPrependDirectionCheckBox->Checked)
+	if (form_->packetLogPrependDirectionCheckBox->Checked)
 	{
 		packet = (is_received ? "[R] " : "[S] ") + packet;
 	}
 
-	if(form_->packetLogPrependTimeCheckBox->Checked)
+	if (form_->packetLogPrependTimeCheckBox->Checked)
 	{
 		packet = "[" + System::DateTime::Now.ToLongTimeString() + "] " + packet;
 	}
-	
+
 	form_->packetLogTextBox->AppendText(packet);
 }

@@ -20,22 +20,21 @@
 #include "vcclr.h"
 #include <string>
 
-namespace devtale {
-
-class PacketHandler
+namespace devtale
 {
-public:
-	PacketHandler(MainForm^ form)
+	class PacketHandler
 	{
-		form_ = form;
-	}
+	public:
+		PacketHandler(MainForm^ form)
+		{
+			form_ = form;
+		}
 
-	void onPacketSend(std::string packet) const;
-	void onPacketReceive(std::string packet) const;
-	
-private:
-	gcroot<MainForm^> form_;
-	void appendLog(System::String^ packet, bool is_received) const;
-};
+		void onPacketSend(std::string packet) const;
+		void onPacketReceive(std::string packet) const;
 
+	private:
+		gcroot<MainForm^> form_;
+		void appendLog(String^ packet, bool is_received) const;
+	};
 }

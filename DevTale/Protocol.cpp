@@ -21,8 +21,8 @@
 #include "PacketHandler.h"
 
 #pragma managed(push, off)
-namespace devtale {
-
+namespace devtale
+{
 	Protocol::Protocol()
 	{
 		setup();
@@ -44,14 +44,20 @@ namespace devtale {
 	void Protocol::setup()
 	{
 		// ReSharper disable StringLiteralTypo
-		const BYTE send_pattern_byte[] = { 0x53, 0x56, 0x8B, 0xF2, 0x8B, 0xD8, 0xEB, 0x04 };
+		const BYTE send_pattern_byte[] = {0x53, 0x56, 0x8B, 0xF2, 0x8B, 0xD8, 0xEB, 0x04};
 		const auto send_pattern_mask = "xxxxxxxx";
-		const BYTE receive_pattern_byte[] = { 0x55, 0x8B, 0xEC, 0x83, 0xC4, 0xFF, 0x53, 0x56, 0x57, 0x33, 0xC9, 0x89, 0x4D, 0xF4, 0x89, 0x55, 0xFC, 0x8B, 0xD8, 0x8B, 0x45, 0xFC };
+		const BYTE receive_pattern_byte[] = {
+			0x55, 0x8B, 0xEC, 0x83, 0xC4, 0xFF, 0x53, 0x56, 0x57, 0x33, 0xC9, 0x89, 0x4D, 0xF4, 0x89, 0x55, 0xFC, 0x8B,
+			0xD8, 0x8B, 0x45, 0xFC
+		};
 		const auto receive_pattern_mask = "xxxxx?xxxxxxxxxxxxxxxx";
-		const BYTE ptr_pattern_byte[] = { 0xA1, 0xFF, 0xFF, 0xFF, 0xFF, 0x8B, 0x00, 0xBA, 0xFF, 0xFF, 0xFF, 0xFF, 0xE8, 0xFF, 0xFF, 0xFF, 0xFF, 0xE9, 0xFF, 0xFF, 0xFF, 0xFF, 0xA1, 0xFF, 0xFF, 0xFF, 0xFF, 0x8B, 0x00, 0x8B, 0x40, 0x40 };
+		const BYTE ptr_pattern_byte[] = {
+			0xA1, 0xFF, 0xFF, 0xFF, 0xFF, 0x8B, 0x00, 0xBA, 0xFF, 0xFF, 0xFF, 0xFF, 0xE8, 0xFF, 0xFF, 0xFF, 0xFF, 0xE9,
+			0xFF, 0xFF, 0xFF, 0xFF, 0xA1, 0xFF, 0xFF, 0xFF, 0xFF, 0x8B, 0x00, 0x8B, 0x40, 0x40
+		};
 		const auto ptr_pattern_mask = "x????xxx????x????x????x????xxxxx";
 		// ReSharper restore StringLiteralTypo
-		
+
 		send_ = Memory::findPattern(send_pattern_byte, send_pattern_mask);
 		std::cout << std::hex << "Protocol> send at 0x" << send_ << std::dec << std::endl;
 
@@ -89,13 +95,13 @@ namespace devtale {
 		// ReSharper restore CppDeclaratorNeverUsed
 
 		__asm
-		{
+			{
 			mov edx, nt_packet
 			mov eax, dword ptr ds : [network_ptr]
 			mov eax, dword ptr ds : [eax]
 			mov eax, dword ptr ds : [eax]
 			call network_send
-		}
+			}
 	}
 
 	void Protocol::receive(char* packet) const
@@ -111,14 +117,14 @@ namespace devtale {
 		// ReSharper restore CppDeclaratorNeverUsed
 
 		__asm
-		{
+			{
 			mov eax, dword ptr ss : [network_ptr]
 			mov eax, dword ptr ss : [eax]
 			mov eax, dword ptr ss : [eax]
 			mov eax, dword ptr ds : [eax + 0x34]
 			mov edx, nt_packet
 			call network_receive
-		}
+			}
 	}
 
 	void Protocol::send(const std::string& packet) const
@@ -143,19 +149,19 @@ namespace devtale {
 	{
 		char* packet;
 		_asm
-		{
+			{
 			pushad
 			pushfd
 			mov packet, edx
-		}
+			}
 
 		get()->onPacketSend(packet);
 
 		_asm
-		{
+			{
 			popfd
 			popad
-		}
+			}
 	}
 
 	void Protocol::hookedReceive()
@@ -163,22 +169,21 @@ namespace devtale {
 		char* packet;
 
 		_asm
-		{
+			{
 			pushad
 			pushfd
 			mov packet, edx
-		}
+			}
 
 		get()->onPacketReceive(packet);
 
 		_asm
-		{
+			{
 			popfd
 			popad
-		}
+			}
 	}
 #pragma optimize("", on)
-	
 }
 
 #pragma managed(pop)
