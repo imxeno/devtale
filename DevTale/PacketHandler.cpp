@@ -20,7 +20,7 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
 	if (!form_->logSentPacketsCheckBox->Checked) return;
 	String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableSentPacketFilterCheckBox)
+	if (!form_->enableSentPacketFilterCheckBox->Checked)
 	{
 		appendLog(s, false);
 		return;
@@ -49,7 +49,7 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 {
 	if (!form_->logReceivedPacketsCheckBox->Checked) return;
 	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableReceivedPacketFilterCheckBox)
+	if (!form_->enableReceivedPacketFilterCheckBox->Checked)
 	{
 		appendLog(s, true);
 		return;
