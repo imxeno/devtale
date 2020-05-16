@@ -15,10 +15,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #define WIN32_LEAN_AND_MEAN
+#include <thread>
 #include "windows.h"
 #include "MainForm.h"
 #include "Protocol.h"
 #include "PacketHandler.h"
+
+#define UNUSED(x) (void*)(x)
 
 void WINAPI DllThread()
 {
@@ -40,22 +43,20 @@ void CreateDebugWindow()
 	std::cout.clear();
 }
 
-void WINAPI Setup()
-{
-	devtale::Protocol::get();
-	CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(DllThread), nullptr, 0, nullptr);
-}
-
 bool WINAPI DllMain(_In_ HINSTANCE instance, _In_ DWORD call_reason, _In_ LPVOID reserved)
 {
+    UNUSED(instance);
+    UNUSED(reserved);
+
 	switch (call_reason)
 	{
-	case DLL_PROCESS_ATTACH:
+    case DLL_PROCESS_ATTACH: {
 #ifdef _DEBUG
-		CreateDebugWindow();
+        CreateDebugWindow();
 #endif
-		CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(Setup), nullptr, 0, nullptr);
-		break;
+        std::thread dll(DllThread);
+        dll.detach();
+	} break;
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:
 	case DLL_PROCESS_DETACH:
