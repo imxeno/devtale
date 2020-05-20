@@ -21,12 +21,12 @@ class NosString
 {
 private:
 	char* i8_string_;
-	unsigned long i32_length_;
+	size_t i32_length_;
 
 public:
 	explicit NosString(char* i8_string);
 
 	char* get() const;
 
-	unsigned long length() const;
+	size_t length() const;
 };

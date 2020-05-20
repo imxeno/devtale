@@ -19,6 +19,9 @@
 
 #include <msclr/marshal_cppstd.h>
 
+#pragma warning(push)
+#pragma warning(disable: 4100) //unused formal parameter warning
+
 // Disclaimer:
 // 
 // This file may (and surely will) look bad, but changes to it
@@ -47,9 +50,6 @@ namespace devtale
 		MainForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
@@ -74,156 +74,65 @@ namespace devtale
 			}
 		}
 
-	private:
-		System::Windows::Forms::TabControl^ tabControl1;
-	private:
-		System::Windows::Forms::TabPage^ tabPage1;
-	private:
-		System::Windows::Forms::GroupBox^ groupBox1;
-	private:
-		System::Windows::Forms::TabPage^ tabPage2;
-	private:
-		System::Windows::Forms::GroupBox^ groupBox2;
-	public:
-		System::Windows::Forms::TextBox^ packetLogTextBox;
-	public: System::Windows::Forms::CheckBox^ logSentPacketsCheckBox;
-	public: System::Windows::Forms::CheckBox^ logReceivedPacketsCheckBox;
-	public:
+	private : 
+        System::Windows::Forms::TabControl^ tabControl1;
+        System::Windows::Forms::TabPage^ tabPage1;
+        System::Windows::Forms::GroupBox^ groupBox1;
+        System::Windows::Forms::TabPage^ tabPage2;
+        System::Windows::Forms::GroupBox^ groupBox2;
+        System::Windows::Forms::Label^ label1;
+        System::Windows::Forms::TabControl^ tabControl2;
+        System::Windows::Forms::TabPage^ tabPage3;
+        System::Windows::Forms::TabPage^ tabPage4;
+        System::Windows::Forms::GroupBox^ groupBox4;
+        System::Windows::Forms::NumericUpDown^ sendPacketIntervalTextBox;
+        System::Windows::Forms::NumericUpDown^ sendPacketCountTextBox;
+        System::Windows::Forms::RadioButton^ sendPacketIntervalRadio;
+        System::Windows::Forms::RadioButton^ sendPacketCountRadio;
+        System::Windows::Forms::Button^ multiplePacketSendButton;
+        System::Windows::Forms::TextBox^ multiplePacketSendTextBox;
+        System::Windows::Forms::GroupBox^ groupBox3;
+        System::Windows::Forms::Button^ singlePacketSendButton;
+        System::Windows::Forms::TextBox^ singlePacketSendTextBox;
+        System::Windows::Forms::GroupBox^ groupBox5;
+        System::Windows::Forms::NumericUpDown^ receivePacketIntervalTextBox;
+        System::Windows::Forms::NumericUpDown^ receivePacketCountTextBox;
+        System::Windows::Forms::RadioButton^ receivePacketIntervalRadio;
+        System::Windows::Forms::RadioButton^ receivePacketCountRadio;
+        System::Windows::Forms::TextBox^ multiplePacketReceiveTextBox;
+        System::Windows::Forms::Button^ multiplePacketReceiveButton;
+        System::Windows::Forms::GroupBox^ groupBox6;
+        System::Windows::Forms::Button^ singlePacketReceiveButton;
+        System::Windows::Forms::TextBox^ singlePacketReceiveTextBox;
+        System::Windows::Forms::TabPage^ tabPage5;
+        System::Windows::Forms::GroupBox^ groupBox8;
+        System::Windows::Forms::Button^ newReceivedPacketFilterButton;
+        System::Windows::Forms::Button^ removeReceivedPacketFilterButton;
+        System::Windows::Forms::TextBox^ newReceivedPacketFilterTextBox;
+        System::Windows::Forms::GroupBox^ groupBox7;
+        System::Windows::Forms::Button^ newSentPacketFilterButton;
+        System::Windows::Forms::TextBox^ newSentPacketFilterTextBox;
+        System::Windows::Forms::Button^ removeSentPacketFilterButton;
+        System::Windows::Forms::Timer^ sendTimer;
+        System::Windows::Forms::Timer^ receiveTimer;
+        System::Windows::Forms::GroupBox^ groupBox9;
+        System::Windows::Forms::PictureBox^ pictureBox1;
+        System::ComponentModel::IContainer^ components;
 
-	public:
-		System::Windows::Forms::CheckBox^ enableReceivedPacketFilterCheckBox;
-		System::Windows::Forms::CheckBox^ enableSentPacketFilterCheckBox;
-	private:
-		System::Windows::Forms::Label^ label1;
-	private:
-		System::Windows::Forms::TabControl^ tabControl2;
-	private:
-		System::Windows::Forms::TabPage^ tabPage3;
-	private:
-		System::Windows::Forms::TabPage^ tabPage4;
-	private:
-		System::Windows::Forms::GroupBox^ groupBox4;
-	private: System::Windows::Forms::NumericUpDown^ sendPacketIntervalTextBox;
-
-	private:
-
-	private: System::Windows::Forms::NumericUpDown^ sendPacketCountTextBox;
-	private: System::Windows::Forms::RadioButton^ sendPacketIntervalRadio;
-	private:
-
-
-	private:
-
-	private: System::Windows::Forms::RadioButton^ sendPacketCountRadio;
-
-
-	private:
-
-	private:
-		System::Windows::Forms::Button^ multiplePacketSendButton;
-	private: System::Windows::Forms::TextBox^ multiplePacketSendTextBox;
-
-	private:
-
-	private:
-		System::Windows::Forms::GroupBox^ groupBox3;
-	private:
-		System::Windows::Forms::Button^ singlePacketSendButton;
-	private: System::Windows::Forms::TextBox^ singlePacketSendTextBox;
-	private:
-
-	private:
-		System::Windows::Forms::GroupBox^ groupBox5;
-	private: System::Windows::Forms::NumericUpDown^ receivePacketIntervalTextBox;
-	private:
-
-	private: System::Windows::Forms::NumericUpDown^ receivePacketCountTextBox;
-	private:
-
-	private: System::Windows::Forms::RadioButton^ receivePacketIntervalRadio;
-	private:
-
-	private: System::Windows::Forms::RadioButton^ receivePacketCountRadio;
-
-	private:
-
-	private: System::Windows::Forms::TextBox^ multiplePacketReceiveTextBox;
-	private:
-
-	private:
-		System::Windows::Forms::Button^ multiplePacketReceiveButton;
-
-
-	private:
-		System::Windows::Forms::GroupBox^ groupBox6;
-	private:
-		System::Windows::Forms::Button^ singlePacketReceiveButton;
-private: System::Windows::Forms::TextBox^ singlePacketReceiveTextBox;
-
-	private:
-
-
-
-	private:
-		System::Windows::Forms::TabPage^ tabPage5;
-	private:
-		System::Windows::Forms::GroupBox^ groupBox8;
-	private:
-		System::Windows::Forms::Button^ newReceivedPacketFilterButton;
-private: System::Windows::Forms::Button^ removeReceivedPacketFilterButton;
-private: System::Windows::Forms::TextBox^ newReceivedPacketFilterTextBox;
-	private:
-
-	private:
-
-public: System::Windows::Forms::ListBox^ filterReceivedPacketList;
-	private:
-
-	private:
-		System::Windows::Forms::GroupBox^ groupBox7;
-	private:
-		System::Windows::Forms::Button^ newSentPacketFilterButton;
-private: System::Windows::Forms::TextBox^ newSentPacketFilterTextBox;
-	private:
-
-private: System::Windows::Forms::Button^ removeSentPacketFilterButton;
-	private:
-
-public: System::Windows::Forms::ListBox^ filterSentPacketList;
-	private:
-
-	private:
-
-	private:
-
-	private:
-
-
-private: System::Windows::Forms::Timer^ sendTimer;
-private: System::Windows::Forms::Timer^ receiveTimer;
-public: System::Windows::Forms::RadioButton^ receivedWhitelistRadio;
-public: System::Windows::Forms::RadioButton^ receivedBlacklistRadio;
-public: System::Windows::Forms::RadioButton^ sentWhitelistRadio;
-public: System::Windows::Forms::RadioButton^ sentBlacklistRadio;
-private: System::Windows::Forms::GroupBox^ groupBox9;
-public: System::Windows::Forms::CheckBox^ packetLogPrependTimeCheckBox;
-private:
-
-public: System::Windows::Forms::CheckBox^ packetLogPrependDirectionCheckBox;
-private: System::Windows::Forms::PictureBox^ pictureBox1;
-public:
-
-public:
-public:
-
-
-	private: System::ComponentModel::IContainer^ components;
-
-
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
+    public:
+        System::Windows::Forms::RadioButton^ receivedWhitelistRadio;
+        System::Windows::Forms::RadioButton^ receivedBlacklistRadio;
+        System::Windows::Forms::RadioButton^ sentWhitelistRadio;
+        System::Windows::Forms::RadioButton^ sentBlacklistRadio;
+        System::Windows::Forms::CheckBox^ packetLogPrependDirectionCheckBox;
+        System::Windows::Forms::CheckBox^ packetLogPrependTimeCheckBox;
+        System::Windows::Forms::ListBox^ filterReceivedPacketList;
+        System::Windows::Forms::TextBox^ packetLogTextBox;
+        System::Windows::Forms::ListBox^ filterSentPacketList;
+        System::Windows::Forms::CheckBox^ logSentPacketsCheckBox;
+        System::Windows::Forms::CheckBox^ logReceivedPacketsCheckBox;
+        System::Windows::Forms::CheckBox^ enableReceivedPacketFilterCheckBox;
+        System::Windows::Forms::CheckBox^ enableSentPacketFilterCheckBox;
 
 
 #pragma region Windows Form Designer generated code
@@ -231,6 +140,7 @@ public:
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+    private:
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
@@ -937,115 +847,156 @@ public:
 
 		}
 #pragma endregion
-	private: System::Void SinglePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		devtale::Protocol::get()->send(marshal_as<std::string>(singlePacketSendTextBox->Text));
-	}
-	private: System::Void SinglePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		try {
-		devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
-		}
-		catch (Runtime::InteropServices::SEHException^)
+
+
+	private:
+		System::Void SinglePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
-			// ignore Access Violations
+			devtale::Protocol::get()->send(marshal_as<std::string>(singlePacketSendTextBox->Text));
 		}
-	}
-private: System::Void MultiplePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (sendPacketCountRadio->Checked) {
-		auto count = System::Convert::ToInt32(sendPacketCountTextBox->Text);
-		for (int i = 0; i < count; i++) {
-			MultipleSendPackets();
-		}
-	}
-	else if (sendPacketIntervalRadio->Checked)
-	{
-		if (sendTimer->Enabled)
-			sendTimer->Stop();
-		else sendTimer->Start();
-	}
-}
-	private: System::Void MultipleSendPackets()
-	{
-		auto en = multiplePacketSendTextBox->Lines->GetEnumerator();
-		while (en->MoveNext())
+
+		System::Void SinglePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
-			devtale::Protocol::get()->send(marshal_as<std::string>((System::String^)en->Current));
+			try 
+			{
+			devtale::Protocol::get()->receive(marshal_as<std::string>(singlePacketReceiveTextBox->Text));
+			}
+			catch (Runtime::InteropServices::SEHException^)
+			{
+				// ignore Access Violations
+			}
 		}
-	}
-private: System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (receivePacketCountRadio->Checked) {
-		auto count = System::Convert::ToInt32(receivePacketCountTextBox->Text);
-		for (int i = 0; i < count; i++) {
-			MultipleReceivePackets();
+
+		System::Void MultiplePacketSendButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if (sendPacketCountRadio->Checked) 
+			{
+				auto count = System::Convert::ToInt32(sendPacketCountTextBox->Text);
+				for (int i = 0; i < count; i++) 
+				{
+					MultipleSendPackets();
+				}
+			}
+			else if (sendPacketIntervalRadio->Checked)
+			{
+				if (sendTimer->Enabled)
+					sendTimer->Stop();
+				else 
+					sendTimer->Start();
+			}
 		}
-	}
-	else if (receivePacketIntervalRadio->Checked)
-	{
-		if (receiveTimer->Enabled)
-			receiveTimer->Stop();
-		else receiveTimer->Start();
-	}
-}
-		private: System::Void MultipleReceivePackets()
+
+		System::Void MultipleSendPackets()
+		{
+			auto en = multiplePacketSendTextBox->Lines->GetEnumerator();
+			while (en->MoveNext())
+			{
+				devtale::Protocol::get()->send(marshal_as<std::string>((System::String^)en->Current));
+			}
+		}
+
+		System::Void MultiplePacketReceiveButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if (receivePacketCountRadio->Checked) 
+			{
+				auto count = System::Convert::ToInt32(receivePacketCountTextBox->Text);
+				for (int i = 0; i < count; i++) 
+				{
+					MultipleReceivePackets();
+				}
+			}
+			else if (receivePacketIntervalRadio->Checked)
+			{
+				if (receiveTimer->Enabled)
+					receiveTimer->Stop();
+				else 
+					receiveTimer->Start();
+			}
+		}
+
+		System::Void MultipleReceivePackets()
 		{
 			auto en = multiplePacketReceiveTextBox->Lines->GetEnumerator();
 			while (en->MoveNext())
 			{
-				try {
+				try 
+				{
 					devtale::Protocol::get()->receive(marshal_as<std::string>((System::String^)en->Current));
-				} catch (Runtime::InteropServices::SEHException^)
+				} 
+				catch (Runtime::InteropServices::SEHException^)
 				{
 					// ignore Access Violations
 				}
 			}
 		}
-private: System::Void NewSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if(newSentPacketFilterTextBox->Text == String::Empty)
-	{
-		System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
-		return;
-	}
-	filterSentPacketList->Items->Add(newSentPacketFilterTextBox->Text);
-	newReceivedPacketFilterTextBox->Text = String::Empty;
-}
-private: System::Void NewReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (newReceivedPacketFilterTextBox->Text == String::Empty)
-	{
-		System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
-		return;
-	}
-	filterReceivedPacketList->Items->Add(newReceivedPacketFilterTextBox->Text);
-	newReceivedPacketFilterTextBox->Text = String::Empty;
-}
-private: System::Void RemoveSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (filterSentPacketList->SelectedIndex == -1) return;
-	filterSentPacketList->Items->RemoveAt(filterSentPacketList->SelectedIndex);
-}
-private: System::Void RemoveReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (filterReceivedPacketList->SelectedIndex == -1) return;
-	filterReceivedPacketList->Items->RemoveAt(filterReceivedPacketList->SelectedIndex);
-}
-private: System::Void SendTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-	MultipleSendPackets();
-}
-private: System::Void ReceiveTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-	MultipleReceivePackets();
-}
-private: System::Void SendPacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	sendTimer->Interval = System::Decimal::ToInt32(sendPacketIntervalTextBox->Value);
-}
-private: System::Void ReceivePacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	receiveTimer->Interval = System::Decimal::ToInt32(receivePacketIntervalTextBox->Value);
-}
-private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 
-	if(e->CloseReason == CloseReason::UserClosing)
-	{
-		e->Cancel = true;
-		MessageBox::Show("To close this window just exit the game.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
+		System::Void NewSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if(newSentPacketFilterTextBox->Text == String::Empty)
+			{
+				System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
+				return;
+			}
+			filterSentPacketList->Items->Add(newSentPacketFilterTextBox->Text);
+			newReceivedPacketFilterTextBox->Text = String::Empty;
+		}
+
+		System::Void NewReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if (newReceivedPacketFilterTextBox->Text == String::Empty)
+			{
+				System::Windows::Forms::MessageBox::Show("Why would anyone want to add an empty filter?");
+				return;
+			}
+			filterReceivedPacketList->Items->Add(newReceivedPacketFilterTextBox->Text);
+			newReceivedPacketFilterTextBox->Text = String::Empty;
+		}
+
+		System::Void RemoveSentPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if (filterSentPacketList->SelectedIndex == -1) return;
+			filterSentPacketList->Items->RemoveAt(filterSentPacketList->SelectedIndex);
+		}
+
+		System::Void RemoveReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			if (filterReceivedPacketList->SelectedIndex == -1) return;
+			filterReceivedPacketList->Items->RemoveAt(filterReceivedPacketList->SelectedIndex);
+		}
+
+		System::Void SendTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
+		{
+			MultipleSendPackets();
+		}
+
+		System::Void ReceiveTimer_Tick(System::Object^ sender, System::EventArgs^ e) 
+		{
+			MultipleReceivePackets();
+		}
+
+		System::Void SendPacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
+		{
+			sendTimer->Interval = System::Decimal::ToInt32(sendPacketIntervalTextBox->Value);
+		}
+
+		System::Void ReceivePacketIntervalTextBox_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
+		{
+			receiveTimer->Interval = System::Decimal::ToInt32(receivePacketIntervalTextBox->Value);
+		}
+
+		System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) 
+		{
+			if(e->CloseReason == CloseReason::UserClosing)
+			{
+	   			e->Cancel = true;
+				MessageBox::Show("To close this window just exit the game.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+
+    };
 }
-};
-}
+
+#pragma warning(pop)
 
 // @formatter:on
 // ReSharper restore all
