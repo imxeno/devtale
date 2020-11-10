@@ -938,7 +938,7 @@ namespace devtale
 				return;
 			}
 			filterSentPacketList->Items->Add(newSentPacketFilterTextBox->Text);
-			newReceivedPacketFilterTextBox->Text = String::Empty;
+			newSentPacketFilterTextBox->Text = String::Empty;
 		}
 
 		System::Void NewReceivedPacketFilterButton_Click(System::Object^ sender, System::EventArgs^ e) 
