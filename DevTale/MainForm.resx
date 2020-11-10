@@ -561,7 +561,7 @@
 </value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>DevTale v1.0.7
+    <value>DevTale v1.0.8
 
 Copyright © 2019 Piotr "Xeno" Adamczyk &lt;xeno@xeno.yt&gt;
 For debugging and researching purposes only.
@@ -581,12 +581,12 @@ Because the people who are crazy enough to think they can change the world, are 
 Thanks to everyone who gave me a helping hand during my journey.
 I'm not done yet.</value>
   </data>
-  <metadata name="sendTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="sendTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="receiveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="receiveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>125, 17</value>
-  </metadata>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
