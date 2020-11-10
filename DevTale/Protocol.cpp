@@ -72,14 +72,14 @@ namespace devtale
 
 	void __stdcall Protocol::onPacketSend(char* packet)
 	{
-		const std::string ps(packet);
-		get()->handler_->onPacketSend(packet);
+		const std::string ps(packet != nullptr ? packet : "");
+		get()->handler_->onPacketSend(ps);
 	}
 
 	void __stdcall Protocol::onPacketReceive(char* packet)
 	{
-		const std::string ps(packet);
-		get()->handler_->onPacketReceive(packet);
+		const std::string ps(packet != nullptr ? packet : "");
+		get()->handler_->onPacketReceive(ps);
 	}
 
 	void Protocol::send(char* packet) const
